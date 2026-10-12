@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Scans every commit about to be pushed (catches commits made with --no-verify).
+set -euo pipefail
+check="$(git rev-parse --show-toplevel)/.githooks/check-secrets"
+zero=0000000000000000000000000000000000000000
+
+while read -r _local_ref local_sha _remote_ref remote_sha; do
+  [ "$local_sha" = "$zero" ] && continue # deleting a remote branch
+  if [ "$remote_sha" = "$zero" ]; then
+    range="$local_sha --not --remotes" # new branch: only commits not on any remote
+  else
+    range="$remote_sha..$local_sha"
+  fi
+  "$check" range "$range"
+done

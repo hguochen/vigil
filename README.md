@@ -25,7 +25,23 @@ See [docs/PLAN.md](docs/PLAN.md) for the full v1 scope.
 ## Setup
 
 ```bash
-cp .env.example .env   # then set TYPESAFE_API_KEY
+cp .env.example .env                    # then set TYPESAFE_API_KEY (never commit .env)
+git config core.hooksPath .githooks     # once per clone: enable the secret-scanning hooks
+```
+
+### Secrets
+
+Secrets live only in the untracked `.env`. The git hooks in `.githooks/` scan every commit (`pre-commit`) and everything being pushed (`pre-push`, which also catches `--no-verify` commits). They block:
+
+- `.env` and key files;
+- known token formats (TypeSafe, AWS, GitHub, OpenAI/Anthropic, Slack, Google, private keys);
+- secret-named variables with literal values;
+- any line containing a secret value from your local `.env`, whatever its format.
+
+Findings name the file, never the secret. Deliberately public values go in `.githooks/secrets-allowlist`. To scan the whole history at any time:
+
+```bash
+.githooks/check-secrets range "$(git rev-list --max-parents=0 HEAD)..HEAD"
 ```
 
 ### Scoring service
