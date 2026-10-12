@@ -17,6 +17,7 @@
   "include": [
     "src",
     "test",
-    "scripts"
+    "scripts",
+    "vitest.live.config.ts"
   ]
 }

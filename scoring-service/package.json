@@ -12,7 +12,8 @@
     "start": "node dist/index.js",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "eval:offline": "tsx scripts/evaluate-offline.ts"
+    "eval:offline": "tsx scripts/evaluate-offline.ts",
+    "test:live": "node --env-file-if-exists=../.env ./node_modules/vitest/vitest.mjs run --config vitest.live.config.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.2.17",
