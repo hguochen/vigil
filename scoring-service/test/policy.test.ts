@@ -61,6 +61,15 @@ describe("DecisionPolicy", () => {
     expect(() =>
       DecisionPolicy.fromYaml(`version: 1
 thresholds: { step_up_3ds: 0.7, review: 0.6, block: 0.9 }
+risk_levels: { elevated: 0.3, high: 0.6, critical: 0.9 }
+jev: { thresholds: { step_up_3ds: 0.3, review: 0.6, block: 0.9 }, min_action_confidence: 0.6, on_error: rules }`),
+    ).toThrow(/ascending/);
+  });
+
+  it("requires a jev section", () => {
+    expect(() =>
+      DecisionPolicy.fromYaml(`version: 1
+thresholds: { step_up_3ds: 0.3, review: 0.6, block: 0.9 }
 risk_levels: { elevated: 0.3, high: 0.6, critical: 0.9 }`),
     ).toThrow();
   });

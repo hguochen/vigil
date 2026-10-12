@@ -11,3 +11,15 @@ risk_levels:
   elevated: 0.35
   high: 0.6
   critical: 0.85
+
+# Jev strategies (jev, jev_rules). Thresholds apply to Jev's is_fraud probability.
+jev:
+  thresholds:
+    step_up_3ds: 0.35
+    review: 0.6
+    block: 0.9
+  # Jev's recommended action only counts when at least this confident.
+  min_action_confidence: 0.6
+  # If Jev errors or times out: "rules" decides with rules alone,
+  # "review" also sends the order to review at minimum.
+  on_error: rules

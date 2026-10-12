@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import type { Decision, Pattern, Reason, RiskLevel } from "../domain/transaction.js";
+import type { JevVerdict } from "../jev/client.js";
 import type { RuleHit } from "../rules/engine.js";
 
 export const DEFAULT_POLICY_PATH = fileURLToPath(new URL("../../config/policy.yaml", import.meta.url));
@@ -21,6 +22,16 @@ const PolicySchema = z.strictObject({
   risk_levels: z
     .strictObject({ elevated: unit, high: unit, critical: unit })
     .refine((t) => ascending(t, ["elevated", "high", "critical"]), "risk levels must be ascending"),
+  jev: z.strictObject({
+    /** Jev is_fraud probability at or above which each decision applies. */
+    thresholds: z
+      .strictObject({ step_up_3ds: unit, review: unit, block: unit })
+      .refine((t) => ascending(t, ["step_up_3ds", "review", "block"]), "jev thresholds must be ascending"),
+    /** Jev's recommended action only counts at or above this confidence. */
+    min_action_confidence: unit,
+    /** When Jev fails: decide with the rules alone, or send the order to review at minimum. */
+    on_error: z.enum(["rules", "review"]),
+  }),
 });
 
 export type PolicyConfig = z.infer<typeof PolicySchema>;
@@ -34,7 +45,10 @@ export interface PolicyOutcome {
 }
 
 const SEVERITY: Record<Decision, number> = { allow: 0, step_up_3ds: 1, review: 2, block: 3 };
-const stricter = (a: Decision, b: Decision): Decision => (SEVERITY[a] >= SEVERITY[b] ? a : b);
+export const stricter = (a: Decision, b: Decision): Decision => (SEVERITY[a] >= SEVERITY[b] ? a : b);
+/** Caps a decision at review: used where a signal may escalate but must not block on its own. */
+export const atMostReview = (d: Decision): Decision => (d === "block" ? "review" : d);
+const pct = (x: number) => `${Math.round(x * 100)}%`;
 
 export class DecisionPolicy {
   constructor(readonly config: PolicyConfig) {}
@@ -85,6 +99,36 @@ export class DecisionPolicy {
       riskLevel: this.riskLevelFor(score),
       pattern: ranked.find((h) => h.pattern)?.pattern ?? "none",
       reasons: ranked.map(({ code, message }) => ({ code, message })),
+    };
+  }
+
+  /**
+   * Maps Jev's typed verdict to a decision. The probability sets the base
+   * decision; a block needs Jev's recommended action to agree with confidence;
+   * a confident recommendation may escalate, but disagreement goes to review.
+   */
+  decideJev(v: JevVerdict): PolicyOutcome {
+    const { thresholds: t, min_action_confidence: minConf } = this.config.jev;
+    const p = v.fraudProbability;
+    const confident = v.action.confidence >= minConf;
+
+    let decision: Decision = p >= t.block ? "block" : p >= t.review ? "review" : p >= t.step_up_3ds ? "step_up_3ds" : "allow";
+    if (decision === "block" && !(confident && v.action.label === "block")) decision = "review";
+    if (confident) decision = stricter(decision, atMostReview(v.action.label));
+
+    return {
+      decision,
+      score: p,
+      riskLevel: v.riskLevel.label,
+      pattern: v.pattern.label,
+      reasons: [
+        {
+          code: "JEV_ASSESSMENT",
+          message:
+            `Jev: ${pct(p)} fraud probability, pattern ${v.pattern.label} (${pct(v.pattern.confidence)}), ` +
+            `recommends ${v.action.label} (${pct(v.action.confidence)})`,
+        },
+      ],
     };
   }
 }
