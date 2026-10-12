@@ -13,7 +13,8 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "eval:offline": "tsx scripts/evaluate-offline.ts",
-    "test:live": "node --env-file-if-exists=../.env ./node_modules/vitest/vitest.mjs run --config vitest.live.config.ts"
+    "test:live": "node --env-file-if-exists=../.env ./node_modules/vitest/vitest.mjs run --config vitest.live.config.ts",
+    "bench": "node --env-file-if-exists=../.env ./node_modules/tsx/dist/cli.mjs scripts/benchmark.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.2.17",
