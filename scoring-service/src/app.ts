@@ -5,10 +5,12 @@ import { TransactionsRepo } from "./db/transactions-repo.js";
 import { healthRoutes } from "./api/health.js";
 import { registerApiKeyAuth } from "./api/auth.js";
 import { transactionRoutes } from "./api/transactions.js";
+import type { FeatureExtractor } from "./features/extractor.js";
 import { passthroughScorer, type Scorer } from "./scoring/scorer.js";
 
 export interface AppDeps {
   db: SqlClient;
+  features: FeatureExtractor;
   scorer?: Scorer;
 }
 
@@ -30,6 +32,7 @@ export async function buildApp(config: Config, deps: AppDeps): Promise<FastifyIn
   await app.register(transactionRoutes, {
     repo: new TransactionsRepo(deps.db),
     scorer: deps.scorer ?? passthroughScorer,
+    features: deps.features,
   });
   return app;
 }

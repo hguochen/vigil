@@ -2,18 +2,21 @@ import { performance } from "node:perf_hooks";
 import type { FastifyInstance } from "fastify";
 import { TransactionSchema, type ScoreResponse, type Transaction } from "../domain/transaction.js";
 import type { TransactionsRepo } from "../db/transactions-repo.js";
+import type { FeatureExtractor } from "../features/extractor.js";
 import type { Scorer } from "../scoring/scorer.js";
 
 interface Deps {
   repo: TransactionsRepo;
   scorer: Scorer;
+  features: FeatureExtractor;
 }
 
 const round = (ms: number) => Math.round(ms * 100) / 100;
 
-export async function transactionRoutes(app: FastifyInstance, { repo, scorer }: Deps): Promise<void> {
+export async function transactionRoutes(app: FastifyInstance, { repo, scorer, features }: Deps): Promise<void> {
   async function scoreAndStore(txn: Transaction, startedAt: number): Promise<ScoreResponse> {
-    const { raw, ...result } = await scorer.score(txn);
+    const featureVector = await features.extract(txn);
+    const { raw, ...result } = await scorer.score(txn, featureVector);
     const response: ScoreResponse = {
       transaction_id: txn.transaction_id,
       ...result,
@@ -21,7 +24,12 @@ export async function transactionRoutes(app: FastifyInstance, { repo, scorer }: 
       latency_ms: round(performance.now() - startedAt),
       scored_at: new Date().toISOString(),
     };
-    await repo.insertDecision(response, raw ?? null);
+    await repo.insertDecision(response, raw ?? null, featureVector);
+    // Record into history only once a decision exists, so a failed attempt
+    // that is retried never sees itself. The decision stands even if this fails.
+    await features.record(txn).catch((err: unknown) => {
+      app.log.error({ err, transaction_id: txn.transaction_id }, "failed to record transaction features");
+    });
     return response;
   }
 

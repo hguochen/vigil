@@ -6,6 +6,9 @@ import type { SqlClient } from "../src/db/client.js";
 import type { Scorer } from "../src/scoring/scorer.js";
 import { makeTransaction } from "./fixtures.js";
 import { createTestDb } from "./pglite.js";
+import { FeatureExtractor } from "../src/features/extractor.js";
+import { loadGeoTable } from "../src/features/geo.js";
+import { InMemoryFeatureStore } from "../src/features/store.js";
 
 const API_KEY = "test-key";
 const headers = { "x-api-key": API_KEY };
@@ -28,7 +31,11 @@ describe("transactions API", () => {
         raw: { hits: ["VELOCITY_CARD_1H"] },
       })),
     };
-    app = await buildApp(loadConfig({ LOG_LEVEL: "silent", VIGIL_API_KEY: API_KEY }), { db, scorer });
+    app = await buildApp(loadConfig({ LOG_LEVEL: "silent", VIGIL_API_KEY: API_KEY }), {
+      db,
+      scorer,
+      features: new FeatureExtractor(new InMemoryFeatureStore(), loadGeoTable()),
+    });
   });
 
   afterEach(async () => {
@@ -122,5 +129,30 @@ describe("transactions API", () => {
   it("returns 404 for an unknown transaction", async () => {
     const res = await app.inject({ method: "GET", url: "/v1/transactions/nope", headers });
     expect(res.statusCode).toBe(404);
+  });
+
+  it("passes features to the scorer and stores them with the decision", async () => {
+    await score(makeTransaction());
+    const features = scorer.score.mock.calls[0]![1];
+    expect(features).toMatchObject({ amount_usd: 129.99, customer_prior_txns: 0 });
+    const { rows } = await db.query<{ features: Record<string, unknown> }>(
+      "SELECT features FROM decisions WHERE transaction_id = 'txn_001'",
+    );
+    expect(rows[0]?.features).toEqual(features);
+  });
+
+  it("builds history across transactions but not across retries", async () => {
+    await score(makeTransaction());
+    await score(makeTransaction()); // idempotent retry: not recorded again
+    await score({ ...makeTransaction(), transaction_id: "txn_002", occurred_at: "2026-10-11T18:45:00Z" });
+    const second = scorer.score.mock.calls.at(-1)![1];
+    expect(second).toMatchObject({ customer_prior_txns: 1, card_txn_count_1h: 1, minutes_since_last_customer_txn: 15 });
+  });
+
+  it("does not record a transaction whose scoring failed", async () => {
+    scorer.score.mockRejectedValueOnce(new Error("scorer down"));
+    await score(makeTransaction());
+    await score(makeTransaction()); // retry scores it now
+    expect(scorer.score.mock.calls.at(-1)![1].customer_prior_txns).toBe(0);
   });
 });

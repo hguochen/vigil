@@ -1,5 +1,6 @@
 import type { SqlClient } from "./client.js";
 import type { ScoreResponse, Transaction } from "../domain/transaction.js";
+import type { Features } from "../features/types.js";
 
 export type InsertOutcome = "inserted" | "duplicate" | "conflict";
 
@@ -72,11 +73,12 @@ export class TransactionsRepo {
     return rows[0]?.payload ?? null;
   }
 
-  async insertDecision(decision: ScoreResponse, raw: unknown = null): Promise<void> {
+  async insertDecision(decision: ScoreResponse, raw: unknown = null, features: Features | null = null): Promise<void> {
     await this.db.query(
       `INSERT INTO decisions
-         (transaction_id, strategy, decision, fraud_probability, pattern, risk_level, reasons, latency_ms, scored_at, raw)
-       VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10::jsonb)`,
+         (transaction_id, strategy, decision, fraud_probability, pattern, risk_level, reasons, latency_ms, scored_at,
+          raw, features)
+       VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10::jsonb, $11::jsonb)`,
       [
         decision.transaction_id,
         decision.strategy,
@@ -88,6 +90,7 @@ export class TransactionsRepo {
         decision.latency_ms,
         decision.scored_at,
         raw === null ? null : JSON.stringify(raw),
+        features === null ? null : JSON.stringify(features),
       ],
     );
   }

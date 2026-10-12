@@ -43,6 +43,10 @@ export const MIGRATIONS: Migration[] = [
       CREATE INDEX decisions_transaction_idx ON decisions (transaction_id, scored_at DESC);
     `,
   },
+  {
+    id: "002_decision_features",
+    sql: `ALTER TABLE decisions ADD COLUMN features JSONB;`,
+  },
 ];
 
 export async function migrate(db: SqlClient): Promise<string[]> {

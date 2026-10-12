@@ -26,7 +26,9 @@ services:
       retries: 10
 
   scoring-service:
-    build: ./scoring-service
+    build:
+      context: .
+      dockerfile: scoring-service/Dockerfile
     env_file:
       - path: .env
         required: false
@@ -34,6 +36,7 @@ services:
       DATABASE_URL: postgres://vigil:vigil@postgres:5432/vigil
       REDIS_URL: redis://redis:6379
       PORT: "8080"
+      FEATURE_STORE: redis
     ports:
       - "8080:8080"
     depends_on:

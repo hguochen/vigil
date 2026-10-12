@@ -1,4 +1,5 @@
 import type { Decision, Pattern, Reason, RiskLevel, Strategy, Transaction } from "../domain/transaction.js";
+import type { Features } from "../features/types.js";
 
 export interface ScoreResult {
   decision: Decision;
@@ -12,7 +13,7 @@ export interface ScoreResult {
 
 export interface Scorer {
   readonly strategy: Strategy;
-  score(txn: Transaction): Promise<ScoreResult>;
+  score(txn: Transaction, features: Features): Promise<ScoreResult>;
 }
 
 /** Placeholder until the rules engine lands: allows everything. */
