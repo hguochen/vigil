@@ -5,5 +5,8 @@ export default defineConfig({
   test: {
     include: ["test/live/**/*.live.ts"],
     testTimeout: 30_000,
+    // The verdict lines are the point of a smoke test: print them even when tests pass.
+    silent: false,
+    reporters: ["verbose"],
   },
 });

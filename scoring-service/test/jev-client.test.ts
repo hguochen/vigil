@@ -51,6 +51,20 @@ describe("TypeSafeJevClient", () => {
     await expect(client(stub.fetch).classify(state)).rejects.toBeInstanceOf(JevAnswerError);
   });
 
+  it("reads the most likely risk level, not the fractional expected score", async () => {
+    // Shape captured from a real jev-1.13.0 response.
+    const body = wireBody({ isFraud: 0.94, pattern: "card_testing", risk: "low", action: "block" });
+    body.answers.risk_level = {
+      type: "score",
+      score: 2.95,
+      legend: { "0": "low", "1": "elevated", "2": "high", "3": "critical" },
+      probabilities: { "0": 0, "1": 0, "2": 0.05, "3": 0.95 },
+      confidence: 0.95,
+    };
+    const v = await client(stubFetch(new Response(JSON.stringify(body), { status: 200 })).fetch).classify(state);
+    expect(v.riskLevel).toMatchObject({ label: "critical", confidence: 0.95, expectedLevel: 2.95 });
+  });
+
   it("rejects a missing answer", async () => {
     const body = wireBody({ isFraud: 0.5, pattern: "none", risk: "low", action: "allow" });
     delete (body.answers as Record<string, unknown>).risk_level;

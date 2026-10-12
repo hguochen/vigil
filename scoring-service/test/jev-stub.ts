@@ -13,6 +13,7 @@ export interface StubAnswers {
 /** A /v1/systemone success body in the real wire format (snake_case usage). */
 export function wireBody(a: StubAnswers) {
   const level = RISK_LEVELS.indexOf(a.risk);
+  const neighbor = level < RISK_LEVELS.length - 1 ? level + 1 : level - 1;
   return {
     model: "jev-1",
     answers: {
@@ -23,11 +24,14 @@ export function wireBody(a: StubAnswers) {
         probabilities: { [a.pattern]: a.patternConfidence ?? 0.9 },
         confidence: a.patternConfidence ?? 0.9,
       },
+      // Real shape: `score` is the expected level, `probabilities` the full distribution.
       risk_level: {
         type: "score",
-        score: level,
+        score: level * 0.8 + neighbor * 0.2,
         legend: Object.fromEntries(RISK_LEVELS.map((l, i) => [String(i), l])),
-        probabilities: { [String(level)]: 0.8 },
+        probabilities: Object.fromEntries(
+          RISK_LEVELS.map((_, i) => [String(i), i === level ? 0.8 : i === neighbor ? 0.2 : 0]),
+        ),
         confidence: 0.8,
       },
       action: {

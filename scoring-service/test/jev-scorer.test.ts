@@ -31,7 +31,7 @@ const empty: HistorySnapshot = {
 const verdict = (p: number, action: Decision, actionConfidence = 0.8, pattern: Pattern = "stolen_card", risk: RiskLevel = "high"): JevVerdict => ({
   fraudProbability: p,
   pattern: { label: pattern, confidence: 0.7, probabilities: {} },
-  riskLevel: { label: risk, confidence: 0.8, probabilities: {} },
+  riskLevel: { label: risk, confidence: 0.8, probabilities: {}, expectedLevel: 2 },
   action: { label: action, confidence: actionConfidence, probabilities: {} },
   model: "jev-1",
   requestId: "req_1",

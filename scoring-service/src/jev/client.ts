@@ -10,11 +10,16 @@ export interface Labeled<T extends string> {
   probabilities: Record<string, number>;
 }
 
+/** A score answer: the most likely level, plus Jev's expected (probability-weighted) level. */
+export interface LeveledAnswer<T extends string> extends Labeled<T> {
+  expectedLevel: number;
+}
+
 /** Jev's typed answers to the Vigil question set. */
 export interface JevVerdict {
   fraudProbability: number;
   pattern: Labeled<Pattern>;
-  riskLevel: Labeled<RiskLevel>;
+  riskLevel: LeveledAnswer<RiskLevel>;
   action: Labeled<Decision>;
   model: string;
   requestId: string | null;
@@ -57,14 +62,16 @@ export function parseVerdict(answers: Record<string, Answer>): Omit<JevVerdict, 
   const pattern = expectType(answers, "fraud_pattern", "choice");
   const risk = expectType(answers, "risk_level", "score");
   const action = expectType(answers, "action", "choice");
-  const level = RISK_LEVELS[risk.score];
-  if (level === undefined) throw new JevAnswerError(`risk_level index ${risk.score} out of range`);
+  // `score` is the expected level (e.g. 2.95), not an index; the label is the most likely level.
+  const ranked = Object.entries(risk.probabilities).sort((a, b) => b[1] - a[1]);
+  const level = ranked.length > 0 ? RISK_LEVELS[Number(ranked[0]![0])] : undefined;
+  if (level === undefined) throw new JevAnswerError(`risk_level has no valid level probabilities`);
   if (!(isFraud.noul >= 0 && isFraud.noul <= 1)) throw new JevAnswerError(`is_fraud ${isFraud.noul} not a probability`);
 
   return {
     fraudProbability: isFraud.noul,
     pattern: { label: oneOf(PATTERNS, pattern.choice, "fraud_pattern"), confidence: pattern.confidence, probabilities: pattern.probabilities },
-    riskLevel: { label: level, confidence: risk.confidence, probabilities: risk.probabilities },
+    riskLevel: { label: level, confidence: risk.confidence, probabilities: risk.probabilities, expectedLevel: risk.score },
     action: { label: oneOf(DECISIONS, action.choice, "action"), confidence: action.confidence, probabilities: action.probabilities },
   };
 }
