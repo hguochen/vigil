@@ -127,6 +127,27 @@ cd scoring-service
 npm run test:live      # opt-in: calls the real Jev API using ../.env
 ```
 
+## Benchmark
+
+```bash
+cd scoring-service
+npm run bench -- ../data/sim/holdout.jsonl --legit-sample 2000            # dry run: prints Jev calls needed
+npm run bench -- ../data/sim/holdout.jsonl --legit-sample 2000 --max-calls N
+cd .. && uv run vigil-bench-report      # reports/bench/report.html
+```
+
+- **Shared inputs.** Features are computed once over the full holdout stream, and every strategy scores the same stratified sample: all fraud plus a seeded legitimate sample, weighted back to full traffic.
+- **Cost controls.** Jev verdicts are cached in `reports/jev-cache.jsonl`, so reruns cost nothing, and real calls are refused unless `--max-calls` covers them. `--limit N` runs a small pilot.
+- **Headline metric.** The report's main comparison is recall at equal alert rate: the share of fraud caught when each strategy flags the same share of orders.
+
+## Live replay with delayed labels
+
+```bash
+uv run vigil-sim replay --data data/sim/holdout.jsonl --limit 3000 --flush-labels --out reports/replay.jsonl
+```
+
+Streams transactions into the running API in time order, and posts each chargeback to `/v1/transactions/{id}/label` once the simulated clock reaches its report date.
+
 ## Features
 
 There are 38 behavioral features, defined once in [contracts/feature_spec.md](contracts/feature_spec.md) and implemented in TypeScript (serving) and Python (training). Parity is enforced by [contracts/golden/features.json](contracts/golden/features.json). After an intentional feature change, regenerate it:
