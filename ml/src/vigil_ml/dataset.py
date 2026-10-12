@@ -75,21 +75,37 @@ def labels_as_of(ds: Dataset, cutoff: np.datetime64) -> np.ndarray:
 @dataclass(frozen=True)
 class Split:
     train: np.ndarray
-    valid: np.ndarray
+    valid: np.ndarray  # calibration: early stopping and decision cutoffs
     test: np.ndarray
-    train_end: np.datetime64
+    labels_as_of: np.datetime64  # "now": labels for train/valid are what is known at this point
 
 
-def time_split(ds: Dataset, train_frac: float = 0.6, valid_frac: float = 0.15) -> Split:
-    """Chronological split: train | valid (early stopping) | test. No shuffling."""
+def time_split(
+    ds: Dataset, test_frac: float = 0.2, maturity_days: float = 21, valid_days: float = 10
+) -> Split:
+    """Chronological split with a label-maturity gap. No shuffling.
+
+        [ train ][ valid ][ ---- maturity gap ---- ] now [ test ]
+
+    Fraud is reported days to weeks after it happens, so the most recent
+    `maturity_days` before "now" still look mostly legitimate. Fitting or
+    calibrating on them would teach the model, and the cutoffs, that recent
+    fraud is fine. They are left out of training; the test window follows "now".
+    """
     start, end = ds.occurred_at[0], ds.occurred_at[-1]
-    span = end - start
-    train_end = start + span * train_frac
-    valid_end = start + span * (train_frac + valid_frac)
+    now = start + (end - start) * (1 - test_frac)
+    valid_end = now - np.timedelta64(int(maturity_days * 86_400_000), "ms")
+    valid_start = valid_end - np.timedelta64(int(valid_days * 86_400_000), "ms")
+    if valid_start <= start:
+        raise ValueError(
+            f"dataset too short: {(end - start) / np.timedelta64(1, 'D'):.0f} days leaves no training window "
+            f"before {valid_days} calibration + {maturity_days} maturity days (use a longer dataset)"
+        )
+    t = ds.occurred_at
     idx = np.arange(len(ds))
     return Split(
-        train=idx[ds.occurred_at < train_end],
-        valid=idx[(ds.occurred_at >= train_end) & (ds.occurred_at < valid_end)],
-        test=idx[ds.occurred_at >= valid_end],
-        train_end=valid_end,  # labels for train+valid are known as of the end of validation
+        train=idx[t < valid_start],
+        valid=idx[(t >= valid_start) & (t < valid_end)],
+        test=idx[t >= now],
+        labels_as_of=now,
     )

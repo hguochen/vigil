@@ -48,9 +48,18 @@ def test_labels_only_count_reported_fraud(paths):
     assert not (known_later & ~ds.is_fraud).any()  # never labels legit as fraud
 
 
-def test_time_split_is_chronological_and_complete(paths):
+def test_time_split_leaves_a_label_maturity_gap(paths):
+    ds = load_dataset(paths[0])  # 20 days
+    s = time_split(ds, test_frac=0.2, maturity_days=5, valid_days=3)
+    t = ds.occurred_at
+    assert t[s.train].max() < t[s.valid].min()
+    gap = (t[s.test].min() - t[s.valid].max()) / np.timedelta64(1, "D")
+    assert gap >= 5  # nothing from the immature window is used for fitting
+    assert t[s.valid].max() < s.labels_as_of <= t[s.test].min()
+    assert len(s.train) + len(s.valid) + len(s.test) < len(ds)  # the gap is excluded
+
+
+def test_time_split_rejects_a_too_short_dataset(paths):
     ds = load_dataset(paths[0])
-    s = time_split(ds)
-    assert len(s.train) + len(s.valid) + len(s.test) == len(ds)
-    assert ds.occurred_at[s.train].max() < ds.occurred_at[s.valid].min()
-    assert ds.occurred_at[s.valid].max() < ds.occurred_at[s.test].min()
+    with pytest.raises(ValueError, match="too short"):
+        time_split(ds, maturity_days=21, valid_days=10)
