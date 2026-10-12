@@ -1,5 +1,22 @@
 # Vigil — eCommerce Fraud Detection powered by Jev (v1 Scope)
 
+## Status (2026-10-12): v1 complete
+
+All nine milestones shipped. Results: [benchmark-results.md](benchmark-results.md). Walkthrough: [walkthrough.md](walkthrough.md).
+
+**Where the build departed from this plan, and why:**
+
+- **The benchmark runs in-process, not over HTTP.** Per-request strategy switching would mix four strategies' feature history in one Redis store. The runner uses the service's own scorers on features computed once, which gives identical decisions with no cross-contamination. The HTTP path is exercised separately by `vigil-sim replay`.
+- **The headline metric is recall at equal alert rate, not recall at a fixed false-positive rate.** Unreported fraud (about 26% here) contaminates any label-based false-positive measure. Alert rate (review capacity) needs no labels and compares strategies at the same operating cost.
+- **XGBoost cutoffs come from alert-rate budgets.** Its probabilities, trained on point-in-time labels, sit far below fixed thresholds. Training also leaves a 21-day label-maturity gap before the cutoff.
+- **Simulator realism fixes.** Travel is modeled as multi-day trips (per-purchase random cities produced impossible travel for legitimate customers), and timestamps are whole seconds to match the API payload.
+- **Jev answer parsing.** The `score` answer is an expected level (for example 2.95), not an index; the risk level is the most likely level in the distribution. This was found on the first real API call.
+- **Not done in v1:**
+  - The Docker Compose stack was never run end to end (no Docker on the dev machine; embedded Postgres and a local Redis binary were used instead).
+  - Jev's thresholds and question instructions were not calibrated on a separate tuning sample, so Jev is benchmarked as first written.
+
+---
+
 ## Context
 Vigil is a showcase project for **Jev by TypeSafe**, a "System One" classifier that returns typed decisions (noul, choice, score) with calibrated probabilities. Every eCommerce transaction is enriched with behavioral signals and sent to Jev, which returns a typed fraud verdict. The centerpiece is a **head-to-head benchmark** on labeled simulator traffic, comparing rules only, an XGBoost baseline, Jev, and Jev plus rules. The goal is to show where Jev wins on accuracy, explainability, latency and cost. v1 is a local proof of concept run with Docker Compose. The repo at `~/Documents/Claude/Projects/vigil` has only an initial commit.
 
