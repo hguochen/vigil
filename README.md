@@ -70,6 +70,27 @@ cd scoring-service
 npm run eval:offline -- ../data/sim/transactions.jsonl
 ```
 
+## Jev strategies
+
+With `SCORING_STRATEGY=jev` or `jev_rules` (both need `TYPESAFE_API_KEY`), each transaction gets one Jev request that answers four typed questions (see `scoring-service/src/jev/questions.ts`):
+
+| Question | Type | Answer |
+|---|---|---|
+| `is_fraud` | noul | Fraud probability |
+| `fraud_pattern` | choice | card_testing, account_takeover, stolen_card, friendly_fraud, promo_abuse, none |
+| `risk_level` | score | low, elevated, high, critical |
+| `action` | choice | allow, step_up_3ds, review, block |
+
+- **Masking:** Jev receives only derived signals and city-level locations: no names, emails, card data, IPs, device ids or street addresses (`src/jev/mask.ts`).
+- **Blocking needs agreement:** a block requires both a high probability and a confident `action=block`. Disagreement goes to review (`config/policy.yaml`, `jev:` section).
+- **`jev_rules`:** hard rules decide without calling Jev. Otherwise fired rules are sent to Jev as evidence, and can raise the decision to review but never to block.
+- **Fallback:** if Jev fails or times out, the rules decide and the response includes a `JEV_UNAVAILABLE` reason.
+
+```bash
+cd scoring-service
+npm run test:live      # opt-in: calls the real Jev API using ../.env
+```
+
 ## Features
 
 There are 38 behavioral features, defined once in [contracts/feature_spec.md](contracts/feature_spec.md) and implemented in TypeScript (serving) and Python (training). Parity is enforced by [contracts/golden/features.json](contracts/golden/features.json). After an intentional feature change, regenerate it:
