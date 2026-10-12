@@ -1,0 +1,6646 @@
+{
+ "spec_version": 1,
+ "streams": [
+  {
+   "name": "simulated",
+   "transactions": [
+    {
+     "transaction_id": "sim_0001",
+     "occurred_at": "2026-09-01T06:00:00Z",
+     "amount_minor": 185,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000052",
+      "bin": "506635",
+      "last4": "1851",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0004",
+       "name": "Digital Goods item 4",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 185
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0002",
+     "occurred_at": "2026-09-01T06:01:04Z",
+     "amount_minor": 167,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000053",
+      "bin": "506635",
+      "last4": "4590",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0002",
+       "name": "Digital Goods item 2",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 167
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0003",
+     "occurred_at": "2026-09-01T06:01:39Z",
+     "amount_minor": 100,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000054",
+      "bin": "506635",
+      "last4": "2184",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0000",
+       "name": "Digital Goods item 0",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 100
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0004",
+     "occurred_at": "2026-09-01T06:02:40Z",
+     "amount_minor": 185,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000055",
+      "bin": "506635",
+      "last4": "1173",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0004",
+       "name": "Digital Goods item 4",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 185
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0005",
+     "occurred_at": "2026-09-01T06:03:17Z",
+     "amount_minor": 173,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000056",
+      "bin": "506635",
+      "last4": "6900",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0003",
+       "name": "Digital Goods item 3",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 173
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0006",
+     "occurred_at": "2026-09-01T06:04:08Z",
+     "amount_minor": 152,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000057",
+      "bin": "506635",
+      "last4": "5248",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0001",
+       "name": "Digital Goods item 1",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 152
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0007",
+     "occurred_at": "2026-09-01T06:05:35Z",
+     "amount_minor": 185,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000058",
+      "bin": "506635",
+      "last4": "4379",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0004",
+       "name": "Digital Goods item 4",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 185
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0008",
+     "occurred_at": "2026-09-01T06:06:41Z",
+     "amount_minor": 173,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000059",
+      "bin": "506635",
+      "last4": "6735",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0003",
+       "name": "Digital Goods item 3",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 173
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0009",
+     "occurred_at": "2026-09-01T06:07:00Z",
+     "amount_minor": 167,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000060",
+      "bin": "506635",
+      "last4": "0318",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0002",
+       "name": "Digital Goods item 2",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 167
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0010",
+     "occurred_at": "2026-09-01T06:07:50Z",
+     "amount_minor": 100,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000061",
+      "bin": "506635",
+      "last4": "2892",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0000",
+       "name": "Digital Goods item 0",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 100
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0011",
+     "occurred_at": "2026-09-01T06:08:29Z",
+     "amount_minor": 173,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000062",
+      "bin": "506635",
+      "last4": "4285",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0003",
+       "name": "Digital Goods item 3",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 173
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0012",
+     "occurred_at": "2026-09-01T06:09:52Z",
+     "amount_minor": 173,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000063",
+      "bin": "506635",
+      "last4": "9472",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0003",
+       "name": "Digital Goods item 3",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 173
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0013",
+     "occurred_at": "2026-09-01T06:10:50Z",
+     "amount_minor": 173,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000064",
+      "bin": "506635",
+      "last4": "9449",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0003",
+       "name": "Digital Goods item 3",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 173
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0014",
+     "occurred_at": "2026-09-01T06:12:00Z",
+     "amount_minor": 167,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000065",
+      "bin": "506635",
+      "last4": "9261",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0002",
+       "name": "Digital Goods item 2",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 167
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0015",
+     "occurred_at": "2026-09-01T06:13:01Z",
+     "amount_minor": 173,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000041",
+      "email": "sv87jm23@quickinbox.io",
+      "account_created_at": "2026-08-31T07:21:33Z",
+      "name": "Yuna Lopez"
+     },
+     "card": {
+      "token": "tok_000066",
+      "bin": "506635",
+      "last4": "7504",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000068",
+      "ip": "100.70.180.159",
+      "user_agent": "python-requests/2.32"
+     },
+     "billing_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "shipping_address": {
+      "line1": "2686 Elm St",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7219,
+      "lon": -80.1971
+     },
+     "items": [
+      {
+       "sku": "DIG-0003",
+       "name": "Digital Goods item 3",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 173
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0016",
+     "occurred_at": "2026-09-01T08:51:09Z",
+     "amount_minor": 14098,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000014",
+      "email": "mateo.lopez36@yahoo.com",
+      "account_created_at": "2025-12-15T20:18:06Z",
+      "name": "Mateo Lopez"
+     },
+     "card": {
+      "token": "tok_000019",
+      "bin": "412331",
+      "last4": "8273",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000022",
+      "ip": "100.66.111.206",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "9276 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.017,
+      "lon": -118.2709
+     },
+     "shipping_address": {
+      "line1": "9276 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.017,
+      "lon": -118.2709
+     },
+     "items": [
+      {
+       "sku": "GRO-0007",
+       "name": "Grocery item 7",
+       "category": "grocery",
+       "quantity": 2,
+       "unit_price_minor": 1359
+      },
+      {
+       "sku": "SPO-0012",
+       "name": "Sports item 12",
+       "category": "sports",
+       "quantity": 1,
+       "unit_price_minor": 11380
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0017",
+     "occurred_at": "2026-09-01T10:11:27Z",
+     "amount_minor": 4288,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000029",
+      "email": "jsmith@gmail.com",
+      "account_created_at": "2025-05-29T14:29:55Z",
+      "name": "James Smith"
+     },
+     "card": {
+      "token": "tok_000038",
+      "bin": "590343",
+      "last4": "0722",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000051",
+      "ip": "100.66.16.146",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "6999 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0819,
+      "lon": -118.2794
+     },
+     "shipping_address": {
+      "line1": "6999 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0819,
+      "lon": -118.2794
+     },
+     "items": [
+      {
+       "sku": "TOY-0006",
+       "name": "Toys item 6",
+       "category": "toys",
+       "quantity": 1,
+       "unit_price_minor": 1957
+      },
+      {
+       "sku": "TOY-0009",
+       "name": "Toys item 9",
+       "category": "toys",
+       "quantity": 1,
+       "unit_price_minor": 2331
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0018",
+     "occurred_at": "2026-09-01T10:14:53Z",
+     "amount_minor": 20005,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000009",
+      "email": "ebrown83@proton.me",
+      "account_created_at": "2025-04-28T11:51:15Z",
+      "name": "Ethan Brown"
+     },
+     "card": {
+      "token": "tok_000013",
+      "bin": "470039",
+      "last4": "2587",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000015",
+      "ip": "100.68.0.79",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/129.0 Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "3836 Maple Dr",
+      "city": "Chicago",
+      "region": "IL",
+      "postal_code": "60601",
+      "country": "US",
+      "lat": 41.8584,
+      "lon": -87.6363
+     },
+     "shipping_address": {
+      "line1": "3836 Maple Dr",
+      "city": "Chicago",
+      "region": "IL",
+      "postal_code": "60601",
+      "country": "US",
+      "lat": 41.8584,
+      "lon": -87.6363
+     },
+     "items": [
+      {
+       "sku": "SPO-0004",
+       "name": "Sports item 4",
+       "category": "sports",
+       "quantity": 3,
+       "unit_price_minor": 4165
+      },
+      {
+       "sku": "SPO-0003",
+       "name": "Sports item 3",
+       "category": "sports",
+       "quantity": 1,
+       "unit_price_minor": 3921
+      },
+      {
+       "sku": "HOM-0004",
+       "name": "Home item 4",
+       "category": "home",
+       "quantity": 1,
+       "unit_price_minor": 3589
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0019",
+     "occurred_at": "2026-09-01T11:43:28Z",
+     "amount_minor": 5546,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000015",
+      "email": "msingh@yahoo.com",
+      "account_created_at": "2026-04-05T10:17:17Z",
+      "name": "Mei Singh"
+     },
+     "card": {
+      "token": "tok_000020",
+      "bin": "568094",
+      "last4": "5668",
+      "country": "JP"
+     },
+     "device": {
+      "id": "dev_000023",
+      "ip": "100.89.220.135",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 Safari/605.1.15"
+     },
+     "billing_address": {
+      "line1": "5562 Lake Blvd",
+      "city": "Tokyo",
+      "region": "TK",
+      "postal_code": "100-0001",
+      "country": "JP",
+      "lat": 35.6811,
+      "lon": 139.6499
+     },
+     "shipping_address": {
+      "line1": "5562 Lake Blvd",
+      "city": "Tokyo",
+      "region": "TK",
+      "postal_code": "100-0001",
+      "country": "JP",
+      "lat": 35.6811,
+      "lon": 139.6499
+     },
+     "items": [
+      {
+       "sku": "GRO-0021",
+       "name": "Grocery item 21",
+       "category": "grocery",
+       "quantity": 1,
+       "unit_price_minor": 5546
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0020",
+     "occurred_at": "2026-09-01T15:00:00Z",
+     "amount_minor": 59815,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000042",
+      "email": "e4dqp191lg@tmpbox.net",
+      "account_created_at": "2026-08-31T02:49:42Z",
+      "name": "Grace Lopez"
+     },
+     "card": {
+      "token": "tok_000067",
+      "bin": "448097",
+      "last4": "5673",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000069",
+      "ip": "100.81.3.237",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148"
+     },
+     "billing_address": {
+      "line1": "7269 Maple Dr",
+      "city": "Chicago",
+      "region": "IL",
+      "postal_code": "60601",
+      "country": "US",
+      "lat": 41.8388,
+      "lon": -87.6714
+     },
+     "shipping_address": {
+      "line1": "3698 Pine Rd",
+      "city": "Atlanta",
+      "region": "GA",
+      "postal_code": "30303",
+      "country": "US",
+      "lat": 33.7312,
+      "lon": -84.3836
+     },
+     "items": [
+      {
+       "sku": "ELE-0025",
+       "name": "Electronics item 25",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 59815
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0021",
+     "occurred_at": "2026-09-01T15:52:26Z",
+     "amount_minor": 2402,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000029",
+      "email": "jsmith@gmail.com",
+      "account_created_at": "2025-05-29T14:29:55Z",
+      "name": "James Smith"
+     },
+     "card": {
+      "token": "tok_000038",
+      "bin": "590343",
+      "last4": "0722",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000051",
+      "ip": "100.66.16.146",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "6999 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0709,
+      "lon": -118.2441
+     },
+     "shipping_address": {
+      "line1": "6999 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0709,
+      "lon": -118.2441
+     },
+     "items": [
+      {
+       "sku": "GRO-0012",
+       "name": "Grocery item 12",
+       "category": "grocery",
+       "quantity": 1,
+       "unit_price_minor": 2402
+      }
+     ],
+     "promo_code": "FALL25"
+    },
+    {
+     "transaction_id": "sim_0022",
+     "occurred_at": "2026-09-01T17:03:53Z",
+     "amount_minor": 5874,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000027",
+      "email": "alopez@yahoo.com",
+      "account_created_at": "2025-03-21T03:09:30Z",
+      "name": "Arjun Lopez"
+     },
+     "card": {
+      "token": "tok_000035",
+      "bin": "409903",
+      "last4": "4041",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000047",
+      "ip": "100.68.85.73",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/129.0 Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "7791 Pine Rd",
+      "city": "Chicago",
+      "region": "IL",
+      "postal_code": "60601",
+      "country": "US",
+      "lat": 41.8614,
+      "lon": -87.6567
+     },
+     "shipping_address": {
+      "line1": "7791 Pine Rd",
+      "city": "Chicago",
+      "region": "IL",
+      "postal_code": "60601",
+      "country": "US",
+      "lat": 41.8614,
+      "lon": -87.6567
+     },
+     "items": [
+      {
+       "sku": "TOY-0019",
+       "name": "Toys item 19",
+       "category": "toys",
+       "quantity": 1,
+       "unit_price_minor": 5874
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0023",
+     "occurred_at": "2026-09-01T19:06:52Z",
+     "amount_minor": 15608,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000015",
+      "email": "msingh@yahoo.com",
+      "account_created_at": "2026-04-05T10:17:17Z",
+      "name": "Mei Singh"
+     },
+     "card": {
+      "token": "tok_000020",
+      "bin": "568094",
+      "last4": "5668",
+      "country": "JP"
+     },
+     "device": {
+      "id": "dev_000024",
+      "ip": "100.89.220.135",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "5562 Lake Blvd",
+      "city": "Tokyo",
+      "region": "TK",
+      "postal_code": "100-0001",
+      "country": "JP",
+      "lat": 35.6465,
+      "lon": 139.6553
+     },
+     "shipping_address": {
+      "line1": "5562 Lake Blvd",
+      "city": "Tokyo",
+      "region": "TK",
+      "postal_code": "100-0001",
+      "country": "JP",
+      "lat": 35.6465,
+      "lon": 139.6553
+     },
+     "items": [
+      {
+       "sku": "BEA-0004",
+       "name": "Beauty item 4",
+       "category": "beauty",
+       "quantity": 1,
+       "unit_price_minor": 1151
+      },
+      {
+       "sku": "ELE-0015",
+       "name": "Electronics item 15",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 14457
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0024",
+     "occurred_at": "2026-09-01T20:10:16Z",
+     "amount_minor": 2083,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000029",
+      "email": "jsmith@gmail.com",
+      "account_created_at": "2025-05-29T14:29:55Z",
+      "name": "James Smith"
+     },
+     "card": {
+      "token": "tok_000037",
+      "bin": "586597",
+      "last4": "7794",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000051",
+      "ip": "100.66.16.146",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "6999 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0081,
+      "lon": -118.2495
+     },
+     "shipping_address": {
+      "line1": "6999 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0081,
+      "lon": -118.2495
+     },
+     "items": [
+      {
+       "sku": "GRO-0011",
+       "name": "Grocery item 11",
+       "category": "grocery",
+       "quantity": 1,
+       "unit_price_minor": 2083
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0025",
+     "occurred_at": "2026-09-01T21:45:32Z",
+     "amount_minor": 30399,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000016",
+      "email": "sofia.williams@outlook.com",
+      "account_created_at": "2023-10-05T14:06:27Z",
+      "name": "Sofia Williams"
+     },
+     "card": {
+      "token": "tok_000021",
+      "bin": "574463",
+      "last4": "6598",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000025",
+      "ip": "100.72.19.164",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "486 Pine Rd",
+      "city": "Atlanta",
+      "region": "GA",
+      "postal_code": "30303",
+      "country": "US",
+      "lat": 33.718,
+      "lon": -84.3971
+     },
+     "shipping_address": {
+      "line1": "486 Pine Rd",
+      "city": "Atlanta",
+      "region": "GA",
+      "postal_code": "30303",
+      "country": "US",
+      "lat": 33.718,
+      "lon": -84.3971
+     },
+     "items": [
+      {
+       "sku": "ELE-0019",
+       "name": "Electronics item 19",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 30399
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0026",
+     "occurred_at": "2026-09-02T00:00:00Z",
+     "amount_minor": 59815,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000011",
+      "email": "echen@gmail.com",
+      "account_created_at": "2026-07-27T11:35:06Z",
+      "name": "Emma Chen"
+     },
+     "card": {
+      "token": "tok_000015",
+      "bin": "548894",
+      "last4": "6615",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000070",
+      "ip": "100.89.149.213",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "269 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0447,
+      "lon": -118.273
+     },
+     "shipping_address": {
+      "line1": "7218 Oak Ave",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.8199,
+      "lon": -80.18
+     },
+     "items": [
+      {
+       "sku": "ELE-0025",
+       "name": "Electronics item 25",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 59815
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0027",
+     "occurred_at": "2026-09-02T02:14:41Z",
+     "amount_minor": 3868,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000024",
+      "email": "echen@gmail.com",
+      "account_created_at": "2023-09-27T08:34:08Z",
+      "name": "Emma Chen"
+     },
+     "card": {
+      "token": "tok_000030",
+      "bin": "497290",
+      "last4": "9665",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000042",
+      "ip": "100.66.29.221",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/129.0 Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "8043 Maple Dr",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0037,
+      "lon": -118.2594
+     },
+     "shipping_address": {
+      "line1": "8043 Maple Dr",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0037,
+      "lon": -118.2594
+     },
+     "items": [
+      {
+       "sku": "BEA-0022",
+       "name": "Beauty item 22",
+       "category": "beauty",
+       "quantity": 1,
+       "unit_price_minor": 3868
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0028",
+     "occurred_at": "2026-09-02T09:00:00Z",
+     "amount_minor": 11589,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000043",
+      "email": "ibrown@outlook.com",
+      "account_created_at": "2026-08-31T15:24:33Z",
+      "name": "Isabel Brown"
+     },
+     "card": {
+      "token": "tok_000068",
+      "bin": "599260",
+      "last4": "3666",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000071",
+      "ip": "100.65.9.58",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "shipping_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "items": [
+      {
+       "sku": "ELE-0012",
+       "name": "Electronics item 12",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 11589
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0029",
+     "occurred_at": "2026-09-02T09:05:14Z",
+     "amount_minor": 5175,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000044",
+      "email": "obrown@gmail.com",
+      "account_created_at": "2026-08-31T18:07:09Z"
+     },
+     "card": {
+      "token": "tok_000068",
+      "bin": "599260",
+      "last4": "3666",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000071",
+      "ip": "100.65.9.58",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "shipping_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "items": [
+      {
+       "sku": "ELE-0004",
+       "name": "Electronics item 4",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 5175
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0030",
+     "occurred_at": "2026-09-02T09:09:48Z",
+     "amount_minor": 30399,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000045",
+      "email": "weidavis60@proton.me",
+      "account_created_at": "2026-09-01T11:26:18Z",
+      "name": "Wei Davis"
+     },
+     "card": {
+      "token": "tok_000068",
+      "bin": "599260",
+      "last4": "3666",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000071",
+      "ip": "100.65.9.58",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "shipping_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "items": [
+      {
+       "sku": "ELE-0019",
+       "name": "Electronics item 19",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 30399
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0031",
+     "occurred_at": "2026-09-02T09:12:45Z",
+     "amount_minor": 11682,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000046",
+      "email": "y573kbbs@burnr.email",
+      "account_created_at": "2026-09-02T02:06:43Z",
+      "name": "Isabel Khan"
+     },
+     "card": {
+      "token": "tok_000068",
+      "bin": "599260",
+      "last4": "3666",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000071",
+      "ip": "100.65.9.58",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "shipping_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "items": [
+      {
+       "sku": "SPO-0014",
+       "name": "Sports item 14",
+       "category": "sports",
+       "quantity": 1,
+       "unit_price_minor": 11682
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0032",
+     "occurred_at": "2026-09-02T09:18:25Z",
+     "amount_minor": 30693,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000047",
+      "email": "1r1hhgzso9@burnr.email",
+      "account_created_at": "2026-09-01T22:57:58Z",
+      "name": "Mei Davis"
+     },
+     "card": {
+      "token": "tok_000068",
+      "bin": "599260",
+      "last4": "3666",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000071",
+      "ip": "100.65.9.58",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "shipping_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "items": [
+      {
+       "sku": "ELE-0021",
+       "name": "Electronics item 21",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 30693
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0033",
+     "occurred_at": "2026-09-02T09:21:56Z",
+     "amount_minor": 7426,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000048",
+      "email": "fc2mk0kkjyo@burnr.email",
+      "account_created_at": "2026-09-01T18:48:44Z"
+     },
+     "card": {
+      "token": "tok_000068",
+      "bin": "599260",
+      "last4": "3666",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000071",
+      "ip": "100.65.9.58",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "shipping_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "items": [
+      {
+       "sku": "SPO-0008",
+       "name": "Sports item 8",
+       "category": "sports",
+       "quantity": 1,
+       "unit_price_minor": 7426
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0034",
+     "occurred_at": "2026-09-02T09:26:20Z",
+     "amount_minor": 14457,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000049",
+      "email": "aokafor@gmail.com",
+      "account_created_at": "2026-09-02T07:50:19Z",
+      "name": "Ava Okafor"
+     },
+     "card": {
+      "token": "tok_000068",
+      "bin": "599260",
+      "last4": "3666",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000071",
+      "ip": "100.65.9.58",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "shipping_address": {
+      "line1": "1690 Main St",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7122,
+      "lon": -122.4482
+     },
+     "items": [
+      {
+       "sku": "ELE-0015",
+       "name": "Electronics item 15",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 14457
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0035",
+     "occurred_at": "2026-09-02T12:12:27Z",
+     "amount_minor": 2982,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000002",
+      "email": "arjunnguyen58@outlook.com",
+      "account_created_at": "2025-01-19T11:12:21Z",
+      "name": "Arjun Nguyen"
+     },
+     "card": {
+      "token": "tok_000002",
+      "bin": "578730",
+      "last4": "1062",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000005",
+      "ip": "100.70.129.22",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 Safari/605.1.15"
+     },
+     "billing_address": {
+      "line1": "9755 Cedar Ln",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7557,
+      "lon": -80.1642
+     },
+     "shipping_address": {
+      "line1": "9755 Cedar Ln",
+      "city": "Miami",
+      "region": "FL",
+      "postal_code": "33101",
+      "country": "US",
+      "lat": 25.7557,
+      "lon": -80.1642
+     },
+     "items": [
+      {
+       "sku": "APP-0000",
+       "name": "Apparel item 0",
+       "category": "apparel",
+       "quantity": 1,
+       "unit_price_minor": 1623
+      },
+      {
+       "sku": "GRO-0007",
+       "name": "Grocery item 7",
+       "category": "grocery",
+       "quantity": 1,
+       "unit_price_minor": 1359
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0036",
+     "occurred_at": "2026-09-02T17:24:37Z",
+     "amount_minor": 2424,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000008",
+      "email": "diego.nguyen@icloud.com",
+      "account_created_at": "2025-04-29T21:55:04Z",
+      "name": "Diego Nguyen"
+     },
+     "card": {
+      "token": "tok_000012",
+      "bin": "462753",
+      "last4": "9678",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000014",
+      "ip": "100.66.96.242",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "2158 Elm St",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0806,
+      "lon": -118.2358
+     },
+     "shipping_address": {
+      "line1": "2158 Elm St",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0806,
+      "lon": -118.2358
+     },
+     "items": [
+      {
+       "sku": "TOY-0010",
+       "name": "Toys item 10",
+       "category": "toys",
+       "quantity": 1,
+       "unit_price_minor": 2424
+      }
+     ],
+     "order_note": "Please ring the bell"
+    },
+    {
+     "transaction_id": "sim_0037",
+     "occurred_at": "2026-09-02T18:00:00Z",
+     "amount_minor": 6269,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000011",
+      "email": "echen@gmail.com",
+      "account_created_at": "2026-07-27T11:35:06Z",
+      "name": "Emma Chen"
+     },
+     "card": {
+      "token": "tok_000015",
+      "bin": "548894",
+      "last4": "6615",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000017",
+      "ip": "100.66.75.123",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148"
+     },
+     "billing_address": {
+      "line1": "269 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0863,
+      "lon": -118.2491
+     },
+     "shipping_address": {
+      "line1": "269 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0863,
+      "lon": -118.2491
+     },
+     "items": [
+      {
+       "sku": "APP-0026",
+       "name": "Apparel item 26",
+       "category": "apparel",
+       "quantity": 1,
+       "unit_price_minor": 6269
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0038",
+     "occurred_at": "2026-09-02T18:54:23Z",
+     "amount_minor": 32452,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000011",
+      "email": "echen@gmail.com",
+      "account_created_at": "2026-07-27T11:35:06Z",
+      "name": "Emma Chen"
+     },
+     "card": {
+      "token": "tok_000015",
+      "bin": "548894",
+      "last4": "6615",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000072",
+      "ip": "100.87.242.105",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148"
+     },
+     "billing_address": {
+      "line1": "269 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0748,
+      "lon": -118.2413
+     },
+     "shipping_address": {
+      "line1": "7450 Pine Rd",
+      "city": "Singapore",
+      "region": "SG",
+      "postal_code": "018989",
+      "country": "SG",
+      "lat": 1.3898,
+      "lon": 103.7848
+     },
+     "items": [
+      {
+       "sku": "ELE-0022",
+       "name": "Electronics item 22",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 32452
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0039",
+     "occurred_at": "2026-09-02T21:44:56Z",
+     "amount_minor": 16697,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000032",
+      "email": "noah.chen@gmail.com",
+      "account_created_at": "2023-10-18T04:41:07Z",
+      "name": "Noah Chen"
+     },
+     "card": {
+      "token": "tok_000041",
+      "bin": "458939",
+      "last4": "2448",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000054",
+      "ip": "100.69.156.221",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "9883 Pine Rd",
+      "city": "New York",
+      "region": "NY",
+      "postal_code": "10001",
+      "country": "US",
+      "lat": 40.7739,
+      "lon": -74.0028
+     },
+     "shipping_address": {
+      "line1": "9883 Pine Rd",
+      "city": "New York",
+      "region": "NY",
+      "postal_code": "10001",
+      "country": "US",
+      "lat": 40.7739,
+      "lon": -74.0028
+     },
+     "items": [
+      {
+       "sku": "TOY-0015",
+       "name": "Toys item 15",
+       "category": "toys",
+       "quantity": 3,
+       "unit_price_minor": 4321
+      },
+      {
+       "sku": "GRO-0015",
+       "name": "Grocery item 15",
+       "category": "grocery",
+       "quantity": 1,
+       "unit_price_minor": 3734
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0040",
+     "occurred_at": "2026-09-03T03:00:00Z",
+     "amount_minor": 10132,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000050",
+      "email": "ethansmith@icloud.com",
+      "account_created_at": "2026-09-02T15:43:06Z",
+      "name": "Ethan Smith"
+     },
+     "card": {
+      "token": "tok_000069",
+      "bin": "567167",
+      "last4": "6529",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000073",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 Safari/605.1.15"
+     },
+     "billing_address": {
+      "line1": "4512 Main St",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.3385,
+      "lon": -97.7209
+     },
+     "shipping_address": {
+      "line1": "4512 Main St",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.3385,
+      "lon": -97.7209
+     },
+     "items": [
+      {
+       "sku": "TOY-0017",
+       "name": "Toys item 17",
+       "category": "toys",
+       "quantity": 1,
+       "unit_price_minor": 5198
+      },
+      {
+       "sku": "APP-0019",
+       "name": "Apparel item 19",
+       "category": "apparel",
+       "quantity": 1,
+       "unit_price_minor": 4934
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0041",
+     "occurred_at": "2026-09-03T09:51:05Z",
+     "amount_minor": 5448,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000051",
+      "email": "mateo.kim@outlook.com",
+      "account_created_at": "2026-09-03T09:09:52Z"
+     },
+     "card": {
+      "token": "tok_000070",
+      "bin": "444505",
+      "last4": "7632",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000074",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "4512 Main St Apt 1",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2943,
+      "lon": -97.7649
+     },
+     "shipping_address": {
+      "line1": "4512 Main St Apt 1",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2943,
+      "lon": -97.7649
+     },
+     "items": [
+      {
+       "sku": "BOO-0027",
+       "name": "Books item 27",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 2098
+      },
+      {
+       "sku": "BOO-0035",
+       "name": "Books item 35",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 3350
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0042",
+     "occurred_at": "2026-09-03T12:00:00Z",
+     "amount_minor": 11380,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000026",
+      "email": "echen65@gmail.com",
+      "account_created_at": "2026-05-11T14:54:05Z",
+      "name": "Ethan Chen"
+     },
+     "card": {
+      "token": "tok_000034",
+      "bin": "442209",
+      "last4": "0640",
+      "country": "RO"
+     },
+     "device": {
+      "id": "dev_000046",
+      "ip": "100.83.220.37",
+      "user_agent": "VigilShopApp/4.2 (iOS 18.0)"
+     },
+     "billing_address": {
+      "line1": "7866 Maple Dr",
+      "city": "Bucharest",
+      "region": "B",
+      "postal_code": "010011",
+      "country": "RO",
+      "lat": 44.4512,
+      "lon": 26.1091
+     },
+     "shipping_address": {
+      "line1": "7866 Maple Dr",
+      "city": "Bucharest",
+      "region": "B",
+      "postal_code": "010011",
+      "country": "RO",
+      "lat": 44.4512,
+      "lon": 26.1091
+     },
+     "items": [
+      {
+       "sku": "SPO-0012",
+       "name": "Sports item 12",
+       "category": "sports",
+       "quantity": 1,
+       "unit_price_minor": 11380
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0043",
+     "occurred_at": "2026-09-03T13:12:51Z",
+     "amount_minor": 9389,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000052",
+      "email": "dicpz0bfb64@quickinbox.io",
+      "account_created_at": "2026-09-02T16:51:11Z",
+      "name": "Fatima Rossi"
+     },
+     "card": {
+      "token": "tok_000071",
+      "bin": "509082",
+      "last4": "5510",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000073",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 Safari/605.1.15"
+     },
+     "billing_address": {
+      "line1": "4512 Main St # 2",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2569,
+      "lon": -97.7548
+     },
+     "shipping_address": {
+      "line1": "4512 Main St # 2",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2569,
+      "lon": -97.7548
+     },
+     "items": [
+      {
+       "sku": "HOM-0005",
+       "name": "Home item 5",
+       "category": "home",
+       "quantity": 1,
+       "unit_price_minor": 3622
+      },
+      {
+       "sku": "ELE-0005",
+       "name": "Electronics item 5",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 5767
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0044",
+     "occurred_at": "2026-09-03T15:00:18Z",
+     "amount_minor": 10464,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000024",
+      "email": "echen@gmail.com",
+      "account_created_at": "2023-09-27T08:34:08Z",
+      "name": "Emma Chen"
+     },
+     "card": {
+      "token": "tok_000031",
+      "bin": "517188",
+      "last4": "8450",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000042",
+      "ip": "100.66.29.221",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/129.0 Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "8043 Maple Dr",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0353,
+      "lon": -118.2213
+     },
+     "shipping_address": {
+      "line1": "8043 Maple Dr",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0353,
+      "lon": -118.2213
+     },
+     "items": [
+      {
+       "sku": "BEA-0020",
+       "name": "Beauty item 20",
+       "category": "beauty",
+       "quantity": 3,
+       "unit_price_minor": 3488
+      }
+     ],
+     "promo_code": "FALL25"
+    },
+    {
+     "transaction_id": "sim_0045",
+     "occurred_at": "2026-09-03T16:04:56Z",
+     "amount_minor": 5261,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000038",
+      "email": "djohnson@gmail.com",
+      "account_created_at": "2025-09-22T13:50:11Z",
+      "name": "Daniel Johnson"
+     },
+     "card": {
+      "token": "tok_000048",
+      "bin": "448723",
+      "last4": "3315",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000063",
+      "ip": "100.65.199.162",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148"
+     },
+     "billing_address": {
+      "line1": "8683 Lake Blvd",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7346,
+      "lon": -122.3919
+     },
+     "shipping_address": {
+      "line1": "8683 Lake Blvd",
+      "city": "San Francisco",
+      "region": "CA",
+      "postal_code": "94103",
+      "country": "US",
+      "lat": 37.7346,
+      "lon": -122.3919
+     },
+     "items": [
+      {
+       "sku": "APP-0006",
+       "name": "Apparel item 6",
+       "category": "apparel",
+       "quantity": 1,
+       "unit_price_minor": 2547
+      },
+      {
+       "sku": "HOM-0002",
+       "name": "Home item 2",
+       "category": "home",
+       "quantity": 1,
+       "unit_price_minor": 2714
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0046",
+     "occurred_at": "2026-09-03T19:26:36Z",
+     "amount_minor": 5179,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000008",
+      "email": "diego.nguyen@icloud.com",
+      "account_created_at": "2025-04-29T21:55:04Z",
+      "name": "Diego Nguyen"
+     },
+     "card": {
+      "token": "tok_000012",
+      "bin": "462753",
+      "last4": "9678",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000014",
+      "ip": "100.66.96.242",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "2158 Elm St",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0567,
+      "lon": -118.2753
+     },
+     "shipping_address": {
+      "line1": "2158 Elm St",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0567,
+      "lon": -118.2753
+     },
+     "items": [
+      {
+       "sku": "TOY-0016",
+       "name": "Toys item 16",
+       "category": "toys",
+       "quantity": 1,
+       "unit_price_minor": 5179
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0047",
+     "occurred_at": "2026-09-03T20:04:06Z",
+     "amount_minor": 6456,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000008",
+      "email": "diego.nguyen@icloud.com",
+      "account_created_at": "2025-04-29T21:55:04Z",
+      "name": "Diego Nguyen"
+     },
+     "card": {
+      "token": "tok_000012",
+      "bin": "462753",
+      "last4": "9678",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000014",
+      "ip": "100.66.96.242",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "2158 Elm St",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0949,
+      "lon": -118.2304
+     },
+     "shipping_address": {
+      "line1": "2158 Elm St",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0949,
+      "lon": -118.2304
+     },
+     "items": [
+      {
+       "sku": "BOO-0029",
+       "name": "Books item 29",
+       "category": "books",
+       "quantity": 3,
+       "unit_price_minor": 2152
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0048",
+     "occurred_at": "2026-09-03T20:40:16Z",
+     "amount_minor": 2052,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "cust_000029",
+      "email": "jsmith@gmail.com",
+      "account_created_at": "2025-05-29T14:29:55Z",
+      "name": "James Smith"
+     },
+     "card": {
+      "token": "tok_000038",
+      "bin": "590343",
+      "last4": "0722",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000051",
+      "ip": "100.66.16.146",
+      "user_agent": "VigilShopApp/4.2 (Android 15)"
+     },
+     "billing_address": {
+      "line1": "6999 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0619,
+      "lon": -118.2968
+     },
+     "shipping_address": {
+      "line1": "6999 Cedar Ln",
+      "city": "Los Angeles",
+      "region": "CA",
+      "postal_code": "90012",
+      "country": "US",
+      "lat": 34.0619,
+      "lon": -118.2968
+     },
+     "items": [
+      {
+       "sku": "BOO-0025",
+       "name": "Books item 25",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 2052
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0049",
+     "occurred_at": "2026-09-03T21:04:28Z",
+     "amount_minor": 5616,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000013",
+      "email": "diego.singh@proton.me",
+      "account_created_at": "2026-08-08T06:43:59Z",
+      "name": "Diego Singh"
+     },
+     "card": {
+      "token": "tok_000018",
+      "bin": "472437",
+      "last4": "1748",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000021",
+      "ip": "100.64.151.198",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "7620 Lake Blvd",
+      "city": "Seattle",
+      "region": "WA",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.5479,
+      "lon": -122.2982
+     },
+     "shipping_address": {
+      "line1": "7620 Lake Blvd",
+      "city": "Seattle",
+      "region": "WA",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.5479,
+      "lon": -122.2982
+     },
+     "items": [
+      {
+       "sku": "BEA-0027",
+       "name": "Beauty item 27",
+       "category": "beauty",
+       "quantity": 1,
+       "unit_price_minor": 5616
+      }
+     ]
+    },
+    {
+     "transaction_id": "sim_0050",
+     "occurred_at": "2026-09-04T00:40:48Z",
+     "amount_minor": 4446,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000053",
+      "email": "o80wzos6@quickinbox.io",
+      "account_created_at": "2026-09-03T14:04:57Z"
+     },
+     "card": {
+      "token": "tok_000072",
+      "bin": "595995",
+      "last4": "9749",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000074",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "4512 Main St",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2382,
+      "lon": -97.7477
+     },
+     "shipping_address": {
+      "line1": "4512 Main St",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2382,
+      "lon": -97.7477
+     },
+     "items": [
+      {
+       "sku": "DIG-0016",
+       "name": "Digital Goods item 16",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 2264
+      },
+      {
+       "sku": "BOO-0030",
+       "name": "Books item 30",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 2182
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0051",
+     "occurred_at": "2026-09-04T04:36:06Z",
+     "amount_minor": 5860,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000054",
+      "email": "lxxlemmeetk@tmpbox.net",
+      "account_created_at": "2026-09-02T19:01:03Z"
+     },
+     "card": {
+      "token": "tok_000073",
+      "bin": "541713",
+      "last4": "4499",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000073",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 Safari/605.1.15"
+     },
+     "billing_address": {
+      "line1": "4512 Main St # 4",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2215,
+      "lon": -97.7155
+     },
+     "shipping_address": {
+      "line1": "4512 Main St # 4",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2215,
+      "lon": -97.7155
+     },
+     "items": [
+      {
+       "sku": "APP-0023",
+       "name": "Apparel item 23",
+       "category": "apparel",
+       "quantity": 1,
+       "unit_price_minor": 5860
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0052",
+     "occurred_at": "2026-09-04T14:39:51Z",
+     "amount_minor": 4164,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000055",
+      "email": "4h58g64m@tmpbox.net",
+      "account_created_at": "2026-09-04T06:25:00Z",
+      "name": "Mary Brown"
+     },
+     "card": {
+      "token": "tok_000074",
+      "bin": "520874",
+      "last4": "7860",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000074",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "4512 Main St Unit 5",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2396,
+      "lon": -97.7702
+     },
+     "shipping_address": {
+      "line1": "4512 Main St Unit 5",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2396,
+      "lon": -97.7702
+     },
+     "items": [
+      {
+       "sku": "ELE-0002",
+       "name": "Electronics item 2",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 4164
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0053",
+     "occurred_at": "2026-09-04T16:35:31Z",
+     "amount_minor": 7971,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000056",
+      "email": "liamokafor36@gmail.com",
+      "account_created_at": "2026-09-03T11:03:04Z",
+      "name": "Liam Okafor"
+     },
+     "card": {
+      "token": "tok_000075",
+      "bin": "571818",
+      "last4": "2250",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000073",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 Safari/605.1.15"
+     },
+     "billing_address": {
+      "line1": "4512 Main St",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2649,
+      "lon": -97.7254
+     },
+     "shipping_address": {
+      "line1": "4512 Main St",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2649,
+      "lon": -97.7254
+     },
+     "items": [
+      {
+       "sku": "TOY-0015",
+       "name": "Toys item 15",
+       "category": "toys",
+       "quantity": 1,
+       "unit_price_minor": 4321
+      },
+      {
+       "sku": "ELE-0001",
+       "name": "Electronics item 1",
+       "category": "electronics",
+       "quantity": 1,
+       "unit_price_minor": 3650
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0054",
+     "occurred_at": "2026-09-04T23:04:24Z",
+     "amount_minor": 4153,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000057",
+      "email": "chqvdc3rm@tmpbox.net",
+      "account_created_at": "2026-09-04T19:57:06Z",
+      "name": "Mei Smith"
+     },
+     "card": {
+      "token": "tok_000076",
+      "bin": "536669",
+      "last4": "3336",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000074",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "4512 Main St Apt 7",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.3309,
+      "lon": -97.732
+     },
+     "shipping_address": {
+      "line1": "4512 Main St Apt 7",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.3309,
+      "lon": -97.732
+     },
+     "items": [
+      {
+       "sku": "BEA-0023",
+       "name": "Beauty item 23",
+       "category": "beauty",
+       "quantity": 1,
+       "unit_price_minor": 4153
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0055",
+     "occurred_at": "2026-09-05T10:30:45Z",
+     "amount_minor": 7418,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000058",
+      "email": "jbxzvd7atq0@tmpbox.net",
+      "account_created_at": "2026-09-03T22:20:35Z"
+     },
+     "card": {
+      "token": "tok_000077",
+      "bin": "443655",
+      "last4": "1627",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000073",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 Safari/605.1.15"
+     },
+     "billing_address": {
+      "line1": "4512 Main St # 8",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2225,
+      "lon": -97.7272
+     },
+     "shipping_address": {
+      "line1": "4512 Main St # 8",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2225,
+      "lon": -97.7272
+     },
+     "items": [
+      {
+       "sku": "BOO-0037",
+       "name": "Books item 37",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 3609
+      },
+      {
+       "sku": "HOM-0009",
+       "name": "Home item 9",
+       "category": "home",
+       "quantity": 1,
+       "unit_price_minor": 3809
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0056",
+     "occurred_at": "2026-09-05T12:04:17Z",
+     "amount_minor": 5035,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000059",
+      "email": "bodauer0u@tmpbox.net",
+      "account_created_at": "2026-09-04T16:44:44Z",
+      "name": "Noah Chen"
+     },
+     "card": {
+      "token": "tok_000078",
+      "bin": "539032",
+      "last4": "1434",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000074",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "4512 Main St",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2539,
+      "lon": -97.7948
+     },
+     "shipping_address": {
+      "line1": "4512 Main St",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2539,
+      "lon": -97.7948
+     },
+     "items": [
+      {
+       "sku": "BEA-0015",
+       "name": "Beauty item 15",
+       "category": "beauty",
+       "quantity": 1,
+       "unit_price_minor": 2512
+      },
+      {
+       "sku": "BEA-0016",
+       "name": "Beauty item 16",
+       "category": "beauty",
+       "quantity": 1,
+       "unit_price_minor": 2523
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0057",
+     "occurred_at": "2026-09-05T20:31:51Z",
+     "amount_minor": 2067,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000060",
+      "email": "fkhan@outlook.com",
+      "account_created_at": "2026-09-05T18:26:40Z",
+      "name": "Fatima Khan"
+     },
+     "card": {
+      "token": "tok_000079",
+      "bin": "579370",
+      "last4": "9999",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000073",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 Safari/605.1.15"
+     },
+     "billing_address": {
+      "line1": "4512 Main St # 10",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.3092,
+      "lon": -97.7112
+     },
+     "shipping_address": {
+      "line1": "4512 Main St # 10",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.3092,
+      "lon": -97.7112
+     },
+     "items": [
+      {
+       "sku": "TOY-0008",
+       "name": "Toys item 8",
+       "category": "toys",
+       "quantity": 1,
+       "unit_price_minor": 2067
+      }
+     ],
+     "promo_code": "WELCOME10"
+    },
+    {
+     "transaction_id": "sim_0058",
+     "occurred_at": "2026-09-05T22:07:25Z",
+     "amount_minor": 2478,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "cust_000061",
+      "email": "roftug05mugt@mailnow.xyz",
+      "account_created_at": "2026-09-04T18:45:26Z"
+     },
+     "card": {
+      "token": "tok_000080",
+      "bin": "518405",
+      "last4": "6400",
+      "country": "US"
+     },
+     "device": {
+      "id": "dev_000074",
+      "ip": "100.67.251.117",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Chrome/129.0 Mobile Safari/537.36"
+     },
+     "billing_address": {
+      "line1": "4512 Main St Unit 11",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2593,
+      "lon": -97.7502
+     },
+     "shipping_address": {
+      "line1": "4512 Main St Unit 11",
+      "city": "Austin",
+      "region": "TX",
+      "postal_code": "73301",
+      "country": "US",
+      "lat": 30.2593,
+      "lon": -97.7502
+     },
+     "items": [
+      {
+       "sku": "BOO-0032",
+       "name": "Books item 32",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 2478
+      }
+     ],
+     "promo_code": "WELCOME10"
+    }
+   ],
+   "features": [
+    {
+     "amount_usd": 1.85,
+     "n_items": 1,
+     "max_unit_price_usd": 1.85,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9433680555555556,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 1.67,
+     "n_items": 1,
+     "max_unit_price_usd": 1.67,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9441087962962963,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 1,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 1,
+     "email_txn_count_24h": 1,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 1,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 0.9027027027027026,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1.0666666666666667,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.0,
+     "n_items": 1,
+     "max_unit_price_usd": 1.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9445138888888889,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 2,
+     "device_txn_count_24h": 2,
+     "ip_txn_count_1h": 2,
+     "email_txn_count_24h": 2,
+     "device_distinct_cards_24h": 2,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 2,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 0.5681818181818182,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 0.5833333333333334,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.85,
+     "n_items": 1,
+     "max_unit_price_usd": 1.85,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9452199074074074,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 3,
+     "device_txn_count_24h": 3,
+     "ip_txn_count_1h": 3,
+     "email_txn_count_24h": 3,
+     "device_distinct_cards_24h": 3,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 3,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.2278761061946903,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1.0166666666666666,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.73,
+     "n_items": 1,
+     "max_unit_price_usd": 1.73,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9456481481481481,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 4,
+     "device_txn_count_24h": 4,
+     "ip_txn_count_1h": 4,
+     "email_txn_count_24h": 4,
+     "device_distinct_cards_24h": 4,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 4,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.086342229199372,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 0.6166666666666667,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.52,
+     "n_items": 1,
+     "max_unit_price_usd": 1.52,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9462384259259259,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 5,
+     "device_txn_count_24h": 5,
+     "ip_txn_count_1h": 5,
+     "email_txn_count_24h": 5,
+     "device_distinct_cards_24h": 5,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 5,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 0.9382716049382716,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 0.85,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.85,
+     "n_items": 1,
+     "max_unit_price_usd": 1.85,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9472453703703704,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 6,
+     "device_txn_count_24h": 6,
+     "ip_txn_count_1h": 6,
+     "email_txn_count_24h": 6,
+     "device_distinct_cards_24h": 6,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 6,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.1538461538461537,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1.45,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.73,
+     "n_items": 1,
+     "max_unit_price_usd": 1.73,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9480092592592593,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 7,
+     "device_txn_count_24h": 7,
+     "ip_txn_count_1h": 7,
+     "email_txn_count_24h": 7,
+     "device_distinct_cards_24h": 7,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 7,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.055797733217088,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1.1,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.67,
+     "n_items": 1,
+     "max_unit_price_usd": 1.67,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9482291666666667,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 8,
+     "device_txn_count_24h": 8,
+     "ip_txn_count_1h": 8,
+     "email_txn_count_24h": 8,
+     "device_distinct_cards_24h": 8,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 8,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.0121212121212122,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 0.31666666666666665,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.0,
+     "n_items": 1,
+     "max_unit_price_usd": 1.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9488078703703704,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 9,
+     "device_txn_count_24h": 9,
+     "ip_txn_count_1h": 9,
+     "email_txn_count_24h": 9,
+     "device_distinct_cards_24h": 9,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 9,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 0.605245460659045,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 0.8333333333333334,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.73,
+     "n_items": 1,
+     "max_unit_price_usd": 1.73,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9492592592592592,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 10,
+     "device_txn_count_24h": 10,
+     "ip_txn_count_1h": 10,
+     "email_txn_count_24h": 10,
+     "device_distinct_cards_24h": 10,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 10,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.0901071203528672,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 0.65,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.73,
+     "n_items": 1,
+     "max_unit_price_usd": 1.73,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9502199074074074,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 11,
+     "device_txn_count_24h": 11,
+     "ip_txn_count_1h": 11,
+     "email_txn_count_24h": 11,
+     "device_distinct_cards_24h": 11,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 11,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.0812499999999998,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1.3833333333333333,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.73,
+     "n_items": 1,
+     "max_unit_price_usd": 1.73,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9508912037037037,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 12,
+     "device_txn_count_24h": 12,
+     "ip_txn_count_1h": 12,
+     "email_txn_count_24h": 12,
+     "device_distinct_cards_24h": 12,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 12,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.073978272115882,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 0.9666666666666667,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.67,
+     "n_items": 1,
+     "max_unit_price_usd": 1.67,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9517013888888889,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 13,
+     "device_txn_count_24h": 13,
+     "ip_txn_count_1h": 13,
+     "email_txn_count_24h": 13,
+     "device_distinct_cards_24h": 13,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 13,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.0308641975308641,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1.1666666666666667,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 1.73,
+     "n_items": 1,
+     "max_unit_price_usd": 1.73,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 6,
+     "channel_app": 0,
+     "account_age_days": 0.9524074074074074,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.457282112682386,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 14,
+     "device_txn_count_24h": 14,
+     "ip_txn_count_1h": 14,
+     "email_txn_count_24h": 14,
+     "device_distinct_cards_24h": 14,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 14,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 1.0655521337439506,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1.0166666666666666,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 140.98,
+     "n_items": 3,
+     "max_unit_price_usd": 113.8,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 8,
+     "channel_app": 1,
+     "account_age_days": 259.5229513888889,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.647788433272428,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 42.88,
+     "n_items": 2,
+     "max_unit_price_usd": 23.31,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 10,
+     "channel_app": 1,
+     "account_age_days": 459.82050925925927,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.660470566751677,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 200.05,
+     "n_items": 5,
+     "max_unit_price_usd": 41.65,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 10,
+     "channel_app": 0,
+     "account_age_days": 490.9330787037037,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 2.255694701180394,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 55.46,
+     "n_items": 1,
+     "max_unit_price_usd": 55.46,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 11,
+     "channel_app": 0,
+     "account_age_days": 149.05984953703702,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.5460517051416717,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 598.15,
+     "n_items": 1,
+     "max_unit_price_usd": 598.15,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 15,
+     "channel_app": 0,
+     "account_age_days": 1.5071527777777778,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 0,
+     "ip_country_matches_card": 0,
+     "ip_billing_distance_km": 6614.05407262489,
+     "billing_shipping_distance_km": 946.4807533152781,
+     "shipping_matches_billing": 0,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 24.02,
+     "n_items": 1,
+     "max_unit_price_usd": 24.02,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 15,
+     "channel_app": 1,
+     "account_age_days": 460.05730324074074,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 2.0796715789353892,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 1,
+     "card_amount_usd_24h": 42.88,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 1,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 1,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 0.5601679104477612,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 340.98333333333335,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 58.74,
+     "n_items": 1,
+     "max_unit_price_usd": 58.74,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 17,
+     "channel_app": 0,
+     "account_age_days": 529.5794328703704,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 2.8999276083519603,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 156.08,
+     "n_items": 2,
+     "max_unit_price_usd": 144.57,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 19,
+     "channel_app": 1,
+     "account_age_days": 149.3677662037037,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 3.333239203108315,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 1,
+     "card_amount_usd_24h": 55.46,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 1,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 1,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 2.8142805625676166,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 443.4,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 20.83,
+     "n_items": 1,
+     "max_unit_price_usd": 20.83,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 20,
+     "channel_app": 1,
+     "account_age_days": 460.2363541666667,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.932738372495899,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 2,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 2,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 2,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 0.6227204783258594,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 257.8333333333333,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 303.99,
+     "n_items": 1,
+     "max_unit_price_usd": 303.99,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 21,
+     "channel_app": 0,
+     "account_age_days": 1062.3188078703704,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 3.5482718094570056,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 598.15,
+     "n_items": 1,
+     "max_unit_price_usd": 598.15,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 0,
+     "channel_app": 0,
+     "account_age_days": 36.517291666666665,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 0,
+     "ip_country_matches_card": 0,
+     "ip_billing_distance_km": 8817.702067545451,
+     "billing_shipping_distance_km": 3759.930938924687,
+     "shipping_matches_billing": 0,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 38.68,
+     "n_items": 1,
+     "max_unit_price_usd": 38.68,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 2,
+     "channel_app": 0,
+     "account_age_days": 1070.7364930555555,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 5.583659476420015,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 1,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 115.89,
+     "n_items": 1,
+     "max_unit_price_usd": 115.89,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 9,
+     "channel_app": 1,
+     "account_age_days": 1.732951388888889,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 7.417574980045374,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 51.75,
+     "n_items": 1,
+     "max_unit_price_usd": 51.75,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 9,
+     "channel_app": 1,
+     "account_age_days": 1.6236689814814815,
+     "email_disposable": 0,
+     "email_name_match": null,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 7.417574980045374,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 1,
+     "card_txn_count_24h": 1,
+     "card_amount_usd_24h": 115.89,
+     "device_txn_count_1h": 1,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 1,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 1,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 303.99,
+     "n_items": 1,
+     "max_unit_price_usd": 303.99,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 9,
+     "channel_app": 1,
+     "account_age_days": 0.9052083333333333,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 7.417574980045374,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 2,
+     "card_txn_count_24h": 2,
+     "card_amount_usd_24h": 167.64,
+     "device_txn_count_1h": 2,
+     "device_txn_count_24h": 2,
+     "ip_txn_count_1h": 2,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 2,
+     "card_distinct_accounts_24h": 2,
+     "shipping_distinct_accounts_7d": 2,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 2,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 116.82,
+     "n_items": 1,
+     "max_unit_price_usd": 116.82,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 9,
+     "channel_app": 1,
+     "account_age_days": 0.29585648148148147,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 7.417574980045374,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 3,
+     "card_txn_count_24h": 3,
+     "card_amount_usd_24h": 471.63,
+     "device_txn_count_1h": 3,
+     "device_txn_count_24h": 3,
+     "ip_txn_count_1h": 3,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 3,
+     "card_distinct_accounts_24h": 3,
+     "shipping_distinct_accounts_7d": 3,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 3,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 306.93,
+     "n_items": 1,
+     "max_unit_price_usd": 306.93,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 9,
+     "channel_app": 1,
+     "account_age_days": 0.4308680555555556,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 7.417574980045374,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 4,
+     "card_txn_count_24h": 4,
+     "card_amount_usd_24h": 588.45,
+     "device_txn_count_1h": 4,
+     "device_txn_count_24h": 4,
+     "ip_txn_count_1h": 4,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 4,
+     "card_distinct_accounts_24h": 4,
+     "shipping_distinct_accounts_7d": 4,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 4,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 74.26,
+     "n_items": 1,
+     "max_unit_price_usd": 74.26,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 9,
+     "channel_app": 1,
+     "account_age_days": 0.6063888888888889,
+     "email_disposable": 1,
+     "email_name_match": null,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 7.417574980045374,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 5,
+     "card_txn_count_24h": 5,
+     "card_amount_usd_24h": 895.38,
+     "device_txn_count_1h": 5,
+     "device_txn_count_24h": 5,
+     "ip_txn_count_1h": 5,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 5,
+     "card_distinct_accounts_24h": 5,
+     "shipping_distinct_accounts_7d": 5,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 5,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 144.57,
+     "n_items": 1,
+     "max_unit_price_usd": 144.57,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 9,
+     "channel_app": 1,
+     "account_age_days": 0.06667824074074075,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 7.417574980045374,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 6,
+     "card_txn_count_24h": 6,
+     "card_amount_usd_24h": 969.64,
+     "device_txn_count_1h": 6,
+     "device_txn_count_24h": 6,
+     "ip_txn_count_1h": 6,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 6,
+     "card_distinct_accounts_24h": 6,
+     "shipping_distinct_accounts_7d": 6,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 6,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 29.82,
+     "n_items": 2,
+     "max_unit_price_usd": 16.23,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 12,
+     "channel_app": 0,
+     "account_age_days": 591.0417361111112,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 2.8434019888366113,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 24.24,
+     "n_items": 1,
+     "max_unit_price_usd": 24.24,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 1,
+     "hour_of_day": 17,
+     "channel_app": 1,
+     "account_age_days": 490.8121875,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 3.2406931165661446,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 62.69,
+     "n_items": 1,
+     "max_unit_price_usd": 62.69,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 18,
+     "channel_app": 0,
+     "account_age_days": 37.267291666666665,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 3.824231121356714,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 1,
+     "card_amount_usd_24h": 598.15,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 2,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 1,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 0.10480648666722395,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1080.0,
+     "travel_speed_kmh": 489.9662885605685
+    },
+    {
+     "amount_usd": 324.52,
+     "n_items": 1,
+     "max_unit_price_usd": 324.52,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 18,
+     "channel_app": 0,
+     "account_age_days": 37.30505787037037,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 0,
+     "ip_country_matches_card": 0,
+     "ip_billing_distance_km": 14119.792083496784,
+     "billing_shipping_distance_km": 14119.47725955982,
+     "shipping_matches_billing": 0,
+     "card_txn_count_1h": 1,
+     "card_txn_count_24h": 2,
+     "card_amount_usd_24h": 660.84,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 3,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 2,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 0.9821439380182797,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 54.38333333333333,
+     "travel_speed_kmh": 15579.37910391764
+    },
+    {
+     "amount_usd": 166.97,
+     "n_items": 4,
+     "max_unit_price_usd": 43.21,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 21,
+     "channel_app": 0,
+     "account_age_days": 1050.7109837962962,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 6.799356515660005,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 101.32,
+     "n_items": 2,
+     "max_unit_price_usd": 51.98,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 3,
+     "channel_app": 0,
+     "account_age_days": 0.47006944444444443,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 8.209663116931448,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 54.48,
+     "n_items": 2,
+     "max_unit_price_usd": 33.5,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 9,
+     "channel_app": 0,
+     "account_age_days": 0.028622685185185185,
+     "email_disposable": 0,
+     "email_name_match": null,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 3.6691252895509834,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 113.8,
+     "n_items": 1,
+     "max_unit_price_usd": 113.8,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 12,
+     "channel_app": 1,
+     "account_age_days": 114.8791087962963,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 2.7632923235392037,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 93.89,
+     "n_items": 2,
+     "max_unit_price_usd": 57.67,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 0.8483796296296297,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 1.6045002922744005,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 2,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 104.64,
+     "n_items": 3,
+     "max_unit_price_usd": 34.88,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 15,
+     "channel_app": 0,
+     "account_age_days": 1072.2681712962963,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 2.791227330282438,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 2,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 1,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": 2.705274043433299,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 2205.616666666667,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 52.61,
+     "n_items": 2,
+     "max_unit_price_usd": 27.14,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 16,
+     "channel_app": 0,
+     "account_age_days": 346.0935763888889,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 5.091743277408069,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 51.79,
+     "n_items": 1,
+     "max_unit_price_usd": 51.79,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 19,
+     "channel_app": 1,
+     "account_age_days": 491.8968981481481,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 2.953860049572773,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 1,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 2.136551155115512,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1561.9833333333333,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 64.56,
+     "n_items": 3,
+     "max_unit_price_usd": 21.52,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 20,
+     "channel_app": 1,
+     "account_age_days": 491.9229398148148,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.903502641243328,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 1,
+     "card_txn_count_24h": 1,
+     "card_amount_usd_24h": 51.79,
+     "device_txn_count_1h": 1,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 1,
+     "email_txn_count_24h": 1,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 2,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 1.6982769959226622,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 37.5,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 20.52,
+     "n_items": 1,
+     "max_unit_price_usd": 20.52,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 20,
+     "channel_app": 1,
+     "account_age_days": 462.2571875,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 5.009221071283143,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 3,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 0.7016983927960788,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 2910.0,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 56.16,
+     "n_items": 1,
+     "max_unit_price_usd": 56.16,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 21,
+     "channel_app": 0,
+     "account_age_days": 26.59755787037037,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 6.963568669141305,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 44.46,
+     "n_items": 2,
+     "max_unit_price_usd": 22.64,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 1,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 0,
+     "channel_app": 0,
+     "account_age_days": 0.4415625,
+     "email_disposable": 1,
+     "email_name_match": null,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 3.2547820094935256,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 3,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 58.6,
+     "n_items": 1,
+     "max_unit_price_usd": 58.6,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 4,
+     "channel_app": 0,
+     "account_age_days": 1.3993402777777777,
+     "email_disposable": 1,
+     "email_name_match": null,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 5.731653129708339,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 4,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 41.64,
+     "n_items": 1,
+     "max_unit_price_usd": 41.64,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 14,
+     "channel_app": 0,
+     "account_age_days": 0.3436458333333333,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 4.024192537468341,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 5,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 79.71,
+     "n_items": 2,
+     "max_unit_price_usd": 43.21,
+     "has_electronics": 1,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 16,
+     "channel_app": 0,
+     "account_age_days": 1.2308680555555556,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 1.7190113255269193,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 6,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 41.53,
+     "n_items": 1,
+     "max_unit_price_usd": 41.53,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 23,
+     "channel_app": 0,
+     "account_age_days": 0.13006944444444443,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 7.162834093372867,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 2,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 2,
+     "device_distinct_accounts_24h": 2,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 7,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 74.18,
+     "n_items": 2,
+     "max_unit_price_usd": 38.09,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 10,
+     "channel_app": 0,
+     "account_age_days": 1.5070601851851853,
+     "email_disposable": 1,
+     "email_name_match": null,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 5.199786226650036,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 8,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 50.35,
+     "n_items": 2,
+     "max_unit_price_usd": 25.23,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 12,
+     "channel_app": 0,
+     "account_age_days": 0.8052430555555555,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 5.181019649210665,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 2,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 2,
+     "device_distinct_accounts_24h": 2,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 9,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 20.67,
+     "n_items": 1,
+     "max_unit_price_usd": 20.67,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 20,
+     "channel_app": 0,
+     "account_age_days": 0.08693287037037037,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 5.584998921659972,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 10,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 24.78,
+     "n_items": 1,
+     "max_unit_price_usd": 24.78,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 1,
+     "has_order_note": 0,
+     "hour_of_day": 22,
+     "channel_app": 0,
+     "account_age_days": 1.1402662037037037,
+     "email_disposable": 1,
+     "email_name_match": null,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 1.1120403763669715,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 2,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 2,
+     "device_distinct_accounts_24h": 2,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 11,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    }
+   ]
+  },
+  {
+   "name": "edge_cases",
+   "transactions": [
+    {
+     "transaction_id": "edge_01",
+     "occurred_at": "2026-10-01T12:00:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_cust",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_02",
+     "occurred_at": "2026-10-01T12:00:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_cust",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_03",
+     "occurred_at": "2026-10-01T12:30:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_cust",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev_2",
+      "ip": "100.78.5.5",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_04",
+     "occurred_at": "2026-10-02T12:00:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_cust",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_05",
+     "occurred_at": "2026-10-02T12:00:00.001Z",
+     "amount_minor": 7500,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_cust",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_06",
+     "occurred_at": "2026-10-02T13:00:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_zoe",
+      "email": "zoe.angstrom@example.com",
+      "name": "Zoë Ångström",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_07",
+     "occurred_at": "2026-10-02T13:05:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_anon",
+      "email": "anon123@example.com",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_08",
+     "occurred_at": "2026-10-02T13:10:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_cust",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_v6",
+      "ip": "2001:db8::1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_09",
+     "occurred_at": "2026-10-02T13:15:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_cust",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 oak  ave Apt 4",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US"
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_10",
+     "occurred_at": "2026-10-02T13:20:00Z",
+     "amount_minor": 20199,
+     "currency": "USD",
+     "channel": "app",
+     "customer": {
+      "id": "edge_bot",
+      "email": "x9f2k@tmpbox.net",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_bot_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "HeadlessChrome/129"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "GIF-0001",
+       "category": "gift_cards",
+       "quantity": 2,
+       "unit_price_minor": 10000
+      },
+      {
+       "sku": "DIG-0001",
+       "category": "digital_goods",
+       "quantity": 1,
+       "unit_price_minor": 199
+      }
+     ],
+     "promo_code": "WELCOME10",
+     "order_note": "Please ship ASAP"
+    },
+    {
+     "transaction_id": "edge_11",
+     "occurred_at": "2026-10-02T13:25:00Z",
+     "amount_minor": 0,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_zero",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0002",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 0
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_12",
+     "occurred_at": "2026-10-02T13:30:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_zero",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_13",
+     "occurred_at": "2026-10-02T13:35:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_cust",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    },
+    {
+     "transaction_id": "edge_14",
+     "occurred_at": "2026-10-09T13:14:00Z",
+     "amount_minor": 5000,
+     "currency": "USD",
+     "channel": "web",
+     "customer": {
+      "id": "edge_late",
+      "email": "jane.doe@example.com",
+      "name": "Jane Doe",
+      "account_created_at": "2026-01-01T00:00:00Z"
+     },
+     "card": {
+      "token": "edge_card",
+      "bin": "411111",
+      "last4": "1111",
+      "country": "US"
+     },
+     "device": {
+      "id": "edge_dev",
+      "ip": "100.64.1.1",
+      "user_agent": "Mozilla/5.0"
+     },
+     "billing_address": {
+      "line1": "12 Oak Ave",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "shipping_address": {
+      "line1": "12 Oak Ave #9",
+      "city": "Seattle",
+      "postal_code": "98101",
+      "country": "US",
+      "lat": 47.61,
+      "lon": -122.33
+     },
+     "items": [
+      {
+       "sku": "BOO-0001",
+       "category": "books",
+       "quantity": 1,
+       "unit_price_minor": 5000
+      }
+     ]
+    }
+   ],
+   "features": [
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 12,
+     "channel_app": 0,
+     "account_age_days": 273.5,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 12,
+     "channel_app": 0,
+     "account_age_days": 273.5,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 0,
+     "customer_prior_txns": 1,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 1.0,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 0.0,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 12,
+     "channel_app": 0,
+     "account_age_days": 273.5208333333333,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 0,
+     "ip_country_matches_card": 0,
+     "ip_billing_distance_km": 7699.1228406340015,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 2,
+     "card_txn_count_24h": 2,
+     "card_amount_usd_24h": 100.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 2,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 2,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 1.0,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 30.0,
+     "travel_speed_kmh": 15399.121313787044
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 12,
+     "channel_app": 0,
+     "account_age_days": 274.5,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 3,
+     "card_amount_usd_24h": 150.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 2,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 3,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 3,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 1.0,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1410.0,
+     "travel_speed_kmh": 327.6408790167456
+    },
+    {
+     "amount_usd": 75.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 12,
+     "channel_app": 0,
+     "account_age_days": 274.50000001157406,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 1,
+     "card_txn_count_24h": 2,
+     "card_amount_usd_24h": 100.0,
+     "device_txn_count_1h": 1,
+     "device_txn_count_24h": 1,
+     "ip_txn_count_1h": 1,
+     "email_txn_count_24h": 2,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 4,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 1.5,
+     "card_other_customers": 0,
+     "minutes_since_last_customer_txn": 1.6666666666666667e-05,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 274.5416666666667,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 2,
+     "card_txn_count_24h": 2,
+     "card_amount_usd_24h": 125.0,
+     "device_txn_count_1h": 2,
+     "device_txn_count_24h": 2,
+     "ip_txn_count_1h": 2,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 1,
+     "card_distinct_accounts_24h": 1,
+     "shipping_distinct_accounts_7d": 1,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 1,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 274.5451388888889,
+     "email_disposable": 0,
+     "email_name_match": null,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 1,
+     "card_txn_count_24h": 3,
+     "card_amount_usd_24h": 175.0,
+     "device_txn_count_1h": 1,
+     "device_txn_count_24h": 3,
+     "ip_txn_count_1h": 1,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 2,
+     "card_distinct_accounts_24h": 2,
+     "shipping_distinct_accounts_7d": 2,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 2,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 274.5486111111111,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 0,
+     "ip_country_matches_billing": null,
+     "ip_country_matches_card": null,
+     "ip_billing_distance_km": null,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 2,
+     "card_txn_count_24h": 4,
+     "card_amount_usd_24h": 225.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 2,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 3,
+     "shipping_distinct_accounts_7d": 3,
+     "customer_prior_txns": 5,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 0.9090909090909091,
+     "card_other_customers": 2,
+     "minutes_since_last_customer_txn": 69.99998333333333,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 274.5520833333333,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": null,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 3,
+     "card_txn_count_24h": 5,
+     "card_amount_usd_24h": 275.0,
+     "device_txn_count_1h": 2,
+     "device_txn_count_24h": 4,
+     "ip_txn_count_1h": 2,
+     "email_txn_count_24h": 3,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 3,
+     "card_distinct_accounts_24h": 3,
+     "shipping_distinct_accounts_7d": 3,
+     "customer_prior_txns": 6,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 0.923076923076923,
+     "card_other_customers": 2,
+     "minutes_since_last_customer_txn": 5.0,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 201.99,
+     "n_items": 3,
+     "max_unit_price_usd": 100.0,
+     "has_electronics": 0,
+     "has_gift_cards": 1,
+     "has_digital_goods": 1,
+     "promo_code_used": 1,
+     "has_order_note": 1,
+     "hour_of_day": 13,
+     "channel_app": 1,
+     "account_age_days": 274.55555555555554,
+     "email_disposable": 1,
+     "email_name_match": 0,
+     "ua_headless": 1,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 4,
+     "card_txn_count_24h": 6,
+     "card_amount_usd_24h": 325.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 3,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 3,
+     "shipping_distinct_accounts_7d": 3,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 3,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 0.0,
+     "n_items": 1,
+     "max_unit_price_usd": 0.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 274.55902777777777,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 5,
+     "card_txn_count_24h": 7,
+     "card_amount_usd_24h": 526.99,
+     "device_txn_count_1h": 3,
+     "device_txn_count_24h": 5,
+     "ip_txn_count_1h": 4,
+     "email_txn_count_24h": 4,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 3,
+     "card_distinct_accounts_24h": 4,
+     "shipping_distinct_accounts_7d": 4,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 4,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 274.5625,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 6,
+     "card_txn_count_24h": 8,
+     "card_amount_usd_24h": 526.99,
+     "device_txn_count_1h": 4,
+     "device_txn_count_24h": 6,
+     "ip_txn_count_1h": 5,
+     "email_txn_count_24h": 5,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 4,
+     "card_distinct_accounts_24h": 5,
+     "shipping_distinct_accounts_7d": 5,
+     "customer_prior_txns": 1,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 4,
+     "minutes_since_last_customer_txn": 5.0,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 274.56597222222223,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 7,
+     "card_txn_count_24h": 9,
+     "card_amount_usd_24h": 576.99,
+     "device_txn_count_1h": 5,
+     "device_txn_count_24h": 7,
+     "ip_txn_count_1h": 6,
+     "email_txn_count_24h": 6,
+     "device_distinct_cards_24h": 1,
+     "device_distinct_accounts_24h": 4,
+     "card_distinct_accounts_24h": 5,
+     "shipping_distinct_accounts_7d": 5,
+     "customer_prior_txns": 7,
+     "is_new_device_for_customer": 0,
+     "is_new_card_for_customer": 0,
+     "amount_vs_customer_avg": 0.9333333333333333,
+     "card_other_customers": 4,
+     "minutes_since_last_customer_txn": 20.0,
+     "travel_speed_kmh": 0.0
+    },
+    {
+     "amount_usd": 50.0,
+     "n_items": 1,
+     "max_unit_price_usd": 50.0,
+     "has_electronics": 0,
+     "has_gift_cards": 0,
+     "has_digital_goods": 0,
+     "promo_code_used": 0,
+     "has_order_note": 0,
+     "hour_of_day": 13,
+     "channel_app": 0,
+     "account_age_days": 281.5513888888889,
+     "email_disposable": 0,
+     "email_name_match": 1,
+     "ua_headless": 0,
+     "ip_known": 1,
+     "ip_country_matches_billing": 1,
+     "ip_country_matches_card": 1,
+     "ip_billing_distance_km": 0.4509161205950131,
+     "billing_shipping_distance_km": 0.0,
+     "shipping_matches_billing": 1,
+     "card_txn_count_1h": 0,
+     "card_txn_count_24h": 0,
+     "card_amount_usd_24h": 0.0,
+     "device_txn_count_1h": 0,
+     "device_txn_count_24h": 0,
+     "ip_txn_count_1h": 0,
+     "email_txn_count_24h": 0,
+     "device_distinct_cards_24h": 0,
+     "device_distinct_accounts_24h": 0,
+     "card_distinct_accounts_24h": 0,
+     "shipping_distinct_accounts_7d": 3,
+     "customer_prior_txns": 0,
+     "is_new_device_for_customer": 1,
+     "is_new_card_for_customer": 1,
+     "amount_vs_customer_avg": null,
+     "card_other_customers": 5,
+     "minutes_since_last_customer_txn": null,
+     "travel_speed_kmh": null
+    }
+   ]
+  }
+ ]
+}
