@@ -6,6 +6,7 @@
  *
  *   npm run bench -- ../data/sim/holdout.jsonl [--strategies rules,xgboost,jev,jev_rules]
  *     [--legit-sample 4000] [--seed 1] [--concurrency 8] [--max-calls 0] [--out ../reports/bench]
+ *     [--limit N (pilot)] [--cache ../reports/jev-cache.jsonl]
  *
  * Real Jev calls are refused unless --max-calls covers every uncached call needed.
  */
@@ -17,7 +18,7 @@ import { parseArgs } from "node:util";
 import { loadConfig } from "../src/config.js";
 import { DecisionPolicy } from "../src/decision/policy.js";
 import { STRATEGIES, TransactionSchema, type Strategy, type Transaction } from "../src/domain/transaction.js";
-import { CachingJevClient, pool, stratifiedSample } from "../src/eval/benchmark.js";
+import { CachingJevClient, pool, stateKey, stratifiedSample } from "../src/eval/benchmark.js";
 import { FeatureExtractor } from "../src/features/extractor.js";
 import { loadGeoTable } from "../src/features/geo.js";
 import { InMemoryFeatureStore } from "../src/features/store.js";
@@ -43,6 +44,8 @@ const { values, positionals } = parseArgs({
     "max-calls": { type: "string", default: "0" },
     limit: { type: "string" },
     out: { type: "string", default: fileURLToPath(new URL("../../reports/bench", import.meta.url)) },
+    // Shared across runs so a pilot's verdicts are reused by the full run.
+    cache: { type: "string", default: fileURLToPath(new URL("../../reports/jev-cache.jsonl", import.meta.url)) },
   },
 });
 const dataPath = positionals[0];
@@ -102,7 +105,7 @@ if (strategies.some((s) => s.startsWith("jev"))) {
     timeoutMs: 20_000, // benchmark measures latency; it is not on a checkout path
     maxRetries: 3,
   });
-  cache = new CachingJevClient(live, config.JEV_MODEL, join(outDir, "jev-cache.jsonl"));
+  cache = new CachingJevClient(live, config.JEV_MODEL, resolve(values.cache!));
 }
 const scorers = new Map<Strategy, Scorer>();
 for (const s of strategies) {
@@ -133,7 +136,8 @@ if (cache) {
       const hits = engine.evaluate(rows[i]!.txn, features[i]!);
       if (s === "jev_rules" && hits.some((h) => h.action)) continue; // hard rule: no call
       const state = buildJevState(rows[i]!.txn, features[i]!, geo, s === "jev_rules" ? hits : []);
-      if (!cache.has(state)) needed.add(`${s}:${JSON.stringify(state)}`);
+      // Same key the cache uses: identical states (e.g. jev and jev_rules when no rule fired) cost one call.
+      if (!cache.has(state)) needed.add(stateKey(state, config.JEV_MODEL));
     }
   }
   const maxCalls = Number(values["max-calls"]);
