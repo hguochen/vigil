@@ -22,7 +22,7 @@ def test_records_are_legit_and_inside_window():
     world, records = traffic()
     for r in records:
         assert not r.label.is_fraud
-        assert r.label.pattern == "none" and r.label.chargeback_at is None
+        assert r.label.pattern == "none" and r.label.reported_at is None
         assert world.start <= r.occurred_at < world.end
 
 

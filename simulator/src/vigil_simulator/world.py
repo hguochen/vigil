@@ -31,7 +31,10 @@ class Label:
     is_fraud: bool
     scenario: str  # "legit" or a fraud scenario name
     pattern: str  # one of the API fraud patterns, or "none"
-    chargeback_at: datetime | None = None
+    # When/how the merchant learns the ground truth. None means never reported,
+    # which happens in reality (e.g. small card-testing charges nobody disputes).
+    reported_at: datetime | None = None
+    report_source: str | None = None  # "chargeback" | "manual_review"
 
 
 @dataclass
