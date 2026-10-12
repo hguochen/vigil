@@ -72,6 +72,14 @@ class Device:
     user_agent: str
 
 
+@dataclass(frozen=True)
+class Trip:
+    start: datetime
+    end: datetime
+    city: City
+    ip_host: int
+
+
 @dataclass
 class Customer:
     id: str
@@ -86,9 +94,17 @@ class Customer:
     purchases_per_day: float
     spend_scale: float  # multiplies basket size; >1 means bigger spender
     ip_host: int = field(default=0)  # stable home IP host part
+    trips: list[Trip] = field(default_factory=list)
 
     def home_ip(self) -> str:
         return ip_in(self.home, self.ip_host)
+
+    def ip_at(self, at: datetime) -> str:
+        """Home IP, or the trip city's IP while the customer is traveling."""
+        for trip in self.trips:
+            if trip.start <= at < trip.end:
+                return ip_in(trip.city, trip.ip_host)
+        return self.home_ip()
 
 
 def ip_in(city: City, host: int) -> str:

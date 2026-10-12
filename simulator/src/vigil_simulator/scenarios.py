@@ -217,7 +217,7 @@ def impossible_travel(world: World, at: datetime) -> list[Record]:
     """Victim buys at home; minutes later their account buys from another continent."""
     rng = world.rng
     victim = random_customer(world)
-    genuine = legit_purchase(world, victim, at)
+    genuine = legit_purchase(world, victim, at, at_home=True)
 
     t = at + timedelta(minutes=float(rng.uniform(5, 60)))
     far = [c for c in world.foreign_cities() if c.country != victim.home.country]

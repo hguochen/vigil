@@ -1,6 +1,6 @@
 from datetime import UTC, datetime
 
-from vigil_simulator.geo import city_for_ip
+from vigil_simulator.geo import city_for_ip, haversine_km
 from vigil_simulator.normal import normal_traffic
 from vigil_simulator.world import build_world
 
@@ -49,3 +49,21 @@ def test_deterministic():
     _, a = traffic(seed=5)
     _, b = traffic(seed=5)
     assert [r.transaction for r in a] == [r.transaction for r in b]
+
+
+def test_travel_is_physically_plausible():
+    """Consecutive purchases by one customer should rarely imply flight-speed travel."""
+    _, records = traffic(customers=1000, days=60)
+    last: dict = {}
+    pairs = fast = 0
+    for r in sorted(records, key=lambda r: r.occurred_at):
+        cid = r.transaction["customer"]["id"]
+        city = city_for_ip(r.transaction["device"]["ip"])
+        if cid in last:
+            prev_at, prev_city = last[cid]
+            hours = max((r.occurred_at - prev_at).total_seconds() / 3600, 1 / 60)
+            km = haversine_km(prev_city.lat, prev_city.lon, city.lat, city.lon)
+            pairs += 1
+            fast += km / hours > 900
+        last[cid] = (r.occurred_at, city)
+    assert fast / pairs < 0.002  # only trips that start/end right around a purchase
