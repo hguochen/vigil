@@ -20,7 +20,7 @@ Single source of truth for the features computed by the scoring service
 ## Shared derivations
 
 - **IP geolocation.** The first two octets of an IPv4 address are matched against `ip_prefix` in `contracts/geo_cities.csv`. Anything else (including IPv6) is unknown.
-- **Address key.** `country|postal_code|norm(line1)`, where `norm` lowercases the text, removes one trailing unit suffix matching `\s+(apt|unit|suite|ste|#)\s*\S*$` (case-insensitive), trims it, and collapses internal whitespace to single spaces. A missing `line1` becomes the empty string.
+- **Address key.** `country|postal_code|norm(line1)`, where `norm` lowercases and trims the text, removes one trailing unit suffix matching `\s+(apt|unit|suite|ste|#)\s*\S*$` (case-insensitive), and collapses internal whitespace to single spaces. A missing `line1` becomes the empty string.
 - **Name tokens.** NFKD normalization, combining marks removed, lowercased, split on any character that isn't `a-z`; tokens shorter than 2 characters are dropped.
 - **Headless user agent.** The UA contains, case-insensitively, `headless`, `python-requests`, `curl`, `wget`, `phantomjs` or `selenium`.
 - **Disposable email domains:** `quickinbox.io`, `tmpbox.net`, `mailnow.xyz`, `burnr.email`.
