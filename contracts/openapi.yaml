@@ -1,0 +1,238 @@
+openapi: 3.1.0
+info:
+  title: Vigil Scoring API
+  version: 0.1.0
+  description: |
+    Real-time fraud scoring for eCommerce transactions.
+    Card data must be tokenized by the payment provider; raw card numbers are never accepted.
+servers:
+  - url: http://localhost:8080
+security:
+  - ApiKey: []
+
+paths:
+  /health:
+    get:
+      summary: Liveness check
+      security: []
+      responses:
+        "200":
+          description: Service is up
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, const: ok }
+
+  /v1/transactions/score:
+    post:
+      summary: Score a transaction
+      description: |
+        Persists the transaction and returns a fraud decision.
+        Idempotent on `transaction_id`: resubmitting the same id returns the stored decision.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Transaction" }
+      responses:
+        "200":
+          description: Scoring decision
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ScoreResponse" }
+        "400": { $ref: "#/components/responses/BadRequest" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /v1/transactions/{transactionId}:
+    get:
+      summary: Get a transaction and its latest decision
+      parameters:
+        - $ref: "#/components/parameters/TransactionId"
+      responses:
+        "200":
+          description: Transaction with decision
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [transaction, decision]
+                properties:
+                  transaction: { $ref: "#/components/schemas/Transaction" }
+                  decision: { $ref: "#/components/schemas/ScoreResponse" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+
+  /v1/transactions/{transactionId}/label:
+    post:
+      summary: Report ground truth for a transaction (chargeback, confirmed fraud, confirmed legit)
+      description: Planned for milestone 8.
+      parameters:
+        - $ref: "#/components/parameters/TransactionId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Label" }
+      responses:
+        "204": { description: Label recorded }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404": { $ref: "#/components/responses/NotFound" }
+
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+
+  parameters:
+    TransactionId:
+      name: transactionId
+      in: path
+      required: true
+      schema: { type: string, minLength: 1, maxLength: 128 }
+
+  responses:
+    BadRequest:
+      description: Request failed validation
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+    Unauthorized:
+      description: Missing or invalid API key
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+    NotFound:
+      description: Transaction not found
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+
+  schemas:
+    Transaction:
+      type: object
+      additionalProperties: false
+      required: [transaction_id, occurred_at, amount_minor, currency, channel, customer, card, device, billing_address, shipping_address, items]
+      properties:
+        transaction_id: { type: string, minLength: 1, maxLength: 128, description: Merchant's unique id; idempotency key }
+        occurred_at: { type: string, format: date-time }
+        amount_minor: { type: integer, minimum: 0, description: Total in minor units (e.g. cents) }
+        currency: { type: string, pattern: "^[A-Z]{3}$" }
+        channel: { type: string, enum: [web, app] }
+        promo_code: { type: string, maxLength: 64 }
+        order_note: { type: string, maxLength: 1000 }
+        customer: { $ref: "#/components/schemas/Customer" }
+        card: { $ref: "#/components/schemas/Card" }
+        device: { $ref: "#/components/schemas/Device" }
+        billing_address: { $ref: "#/components/schemas/Address" }
+        shipping_address: { $ref: "#/components/schemas/Address" }
+        items:
+          type: array
+          minItems: 1
+          maxItems: 100
+          items: { $ref: "#/components/schemas/LineItem" }
+
+    Customer:
+      type: object
+      additionalProperties: false
+      required: [id, email, account_created_at]
+      properties:
+        id: { type: string, minLength: 1, maxLength: 128 }
+        email: { type: string, format: email }
+        name: { type: string, maxLength: 200 }
+        account_created_at: { type: string, format: date-time }
+
+    Card:
+      type: object
+      additionalProperties: false
+      required: [token, bin, last4, country]
+      properties:
+        token: { type: string, minLength: 1, maxLength: 128, description: Payment-provider card token or fingerprint }
+        bin: { type: string, pattern: "^[0-9]{6,8}$" }
+        last4: { type: string, pattern: "^[0-9]{4}$" }
+        country: { type: string, pattern: "^[A-Z]{2}$" }
+
+    Device:
+      type: object
+      additionalProperties: false
+      required: [id, ip]
+      properties:
+        id: { type: string, minLength: 1, maxLength: 128 }
+        ip: { type: string, description: IPv4 or IPv6 }
+        user_agent: { type: string, maxLength: 512 }
+
+    Address:
+      type: object
+      additionalProperties: false
+      required: [city, postal_code, country]
+      properties:
+        line1: { type: string, maxLength: 200 }
+        city: { type: string, maxLength: 100 }
+        region: { type: string, maxLength: 100 }
+        postal_code: { type: string, maxLength: 20 }
+        country: { type: string, pattern: "^[A-Z]{2}$" }
+        lat: { type: number, minimum: -90, maximum: 90 }
+        lon: { type: number, minimum: -180, maximum: 180 }
+
+    LineItem:
+      type: object
+      additionalProperties: false
+      required: [sku, category, quantity, unit_price_minor]
+      properties:
+        sku: { type: string, maxLength: 64 }
+        name: { type: string, maxLength: 200 }
+        category: { type: string, maxLength: 64 }
+        quantity: { type: integer, minimum: 1 }
+        unit_price_minor: { type: integer, minimum: 0 }
+
+    ScoreResponse:
+      type: object
+      required: [transaction_id, decision, fraud_probability, pattern, risk_level, reasons, strategy, latency_ms, scored_at]
+      properties:
+        transaction_id: { type: string }
+        decision: { type: string, enum: [allow, step_up_3ds, review, block] }
+        fraud_probability: { type: [number, "null"], minimum: 0, maximum: 1 }
+        pattern:
+          type: [string, "null"]
+          enum: [card_testing, account_takeover, stolen_card, friendly_fraud, promo_abuse, none, null]
+        risk_level:
+          type: [string, "null"]
+          enum: [low, elevated, high, critical, null]
+        reasons:
+          type: array
+          items:
+            type: object
+            required: [code, message]
+            properties:
+              code: { type: string }
+              message: { type: string }
+        strategy: { type: string, enum: [passthrough, rules, xgboost, jev, jev_rules] }
+        latency_ms: { type: number }
+        scored_at: { type: string, format: date-time }
+
+    Label:
+      type: object
+      additionalProperties: false
+      required: [label]
+      properties:
+        label: { type: string, enum: [fraud, legit] }
+        source: { type: string, enum: [chargeback, manual_review, customer_report] }
+        fraud_pattern: { type: string, enum: [card_testing, account_takeover, stolen_card, friendly_fraud, promo_abuse] }
+        reported_at: { type: string, format: date-time }
+
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+        message: { type: string }
+        issues:
+          type: array
+          items:
+            type: object
+            properties:
+              path: { type: string }
+              message: { type: string }
