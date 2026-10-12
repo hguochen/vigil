@@ -68,7 +68,3 @@ ml/ (Python) ── XGBoost baseline ── ONNX ──► onnxruntime-node (use
 - Parity: TypeScript and Python features match on the golden vectors.
 - End to end: `docker compose up`, then `simulator replay --strategy jev_rules --tps 20 --duration 5m`, then `benchmark run` produces a report comparing all four strategies.
 - Success means `jev_rules` matches or beats `xgboost` on recall at a fixed review rate, with an explanation (pattern and reasons) for every flagged transaction. Latency and cost are reported, not assumed.
-
-## Working rules
-- After every change, make a small commit authored as Gary Hou. No Claude attribution anywhere.
-- Never commit the API key. Read it from `.env` only.
