@@ -69,10 +69,12 @@ def test_report_cli_writes_html_and_summary(tmp_path, capsys):
     (tmp_path / "results.jsonl").write_text("\n".join(json.dumps(r.__dict__) for r in rows) + "\n")
     (tmp_path / "meta.json").write_text(json.dumps({
         "dataset": "/x/holdout.jsonl", "dataset_rows": 11, "sample_rows": 2, "sample_fraud": 1,
-        "limit": None, "jev_model_requested": "jev-latest", "question_set_version": "v",
+        "limit": None, "legit_sample": 10, "jev_model_requested": "jev-latest", "question_set_version": "v",
         "xgb_model_version": None, "jev_errors": {}, "generated_at": "now",
     }))
-    main(["--in", str(tmp_path)])
+    main(["--in", str(tmp_path), "--markdown", str(tmp_path / "results.md")])
+    md = (tmp_path / "results.md").read_text()
+    assert md.startswith("# Benchmark results") and "| Jev |" in md and "## Reproduce" in md
     page = (tmp_path / "report.html").read_text()
     assert "<title>Vigil Benchmark</title>" in page and "Jev operations" in page
     assert json.loads((tmp_path / "summary.json").read_text())["metrics"]["jev"]["flagged_recall"] == 1.0

@@ -175,15 +175,121 @@ code{font-size:12px}dl{display:grid;grid-template-columns:max-content 1fr;gap:4p
 """
 
 
+def render_markdown(metrics: dict[str, dict[str, Any]], meta: dict[str, Any]) -> str:
+    strategies = [s for s in ORDER if s in metrics]
+    names = [LABELS[s] for s in strategies]
+
+    def md_table(headers: list[str], rows: list[list[str]]) -> str:
+        lines = ["| " + " | ".join(headers) + " |", "|" + "|".join("---" for _ in headers) + "|"]
+        lines += ["| " + " | ".join(r) + " |" for r in rows]
+        return "\n".join(lines)
+
+    budgets = [f"{b:.1%}" for b in ALERT_BUDGETS]
+    best = {b: max(metrics[s]["recall_at_alert_rate"][b] for s in strategies) for b in budgets}
+
+    def cell(v: float, b: str) -> str:
+        return f"**{pct(v)}**" if abs(v - best[b]) < 1e-12 else pct(v)
+
+    headline = [[LABELS[s]] + [cell(metrics[s]["recall_at_alert_rate"][b], b) for b in budgets] for s in strategies]
+    headline.append(["_Best possible_"] + [f"_{pct(metrics[strategies[0]]['max_recall_at_alert_rate'][b])}_" for b in budgets])
+    own = [[LABELS[s], pct(m["flagged_recall"]), pct(m["flagged_precision"]), pct(m["blocked_recall"]),
+            pct(m["blocked_precision"]), pct(m["legit_friction"], 2)]
+           for s in strategies for m in [metrics[s]]]
+    scenarios = sorted({sc for s in strategies for sc in metrics[s]["by_scenario"]})
+    sc_rows = []
+    for sc in scenarios:
+        n = next(metrics[s]["by_scenario"][sc]["n"] for s in strategies if sc in metrics[s]["by_scenario"])
+        sc_rows.append([sc, str(n)] + [pct(metrics[s]["by_scenario"].get(sc, {}).get("flagged")) for s in strategies]
+                       + [pct(metrics[s]["by_scenario"].get(sc, {}).get("pattern_accuracy"), 0) for s in strategies])
+    ops = []
+    for s in strategies:
+        j = metrics[s]["jev"]
+        if j and s.startswith("jev"):
+            lat = j["latency_ms"]
+            ops.append([LABELS[s], f"{j['calls_per_1k_txns']:.0f}", *(f"{lat[q]:.0f} ms" for q in ("p50", "p95", "p99")),
+                        f"{j['mean_input_tokens']:,.0f}", str(j["hard_rule_skips"]), str(j["fallbacks"])])
+
+    parts = [
+        "# Benchmark results",
+        "",
+        (
+            f"_Generated {meta['generated_at'][:10]} by `uv run vigil-bench-report --markdown`. "
+            f"Jev model {', '.join(meta.get('jev_models_seen') or [str(meta.get('jev_model_requested'))])} "
+            f"(question set {meta.get('question_set_version')}); XGBoost {meta.get('xgb_model_version')}._"
+        ),
+        "",
+        (
+            f"Holdout: {meta['dataset_rows']:,} simulated transactions (seed 101), never used for training or tuning. "
+            f"Scored sample: {meta['sample_rows']:,} (all {meta['sample_fraud']:,} fraud plus a seeded random sample "
+            "of legitimate orders, weighted back to full traffic). Every strategy sees identical features."
+        ),
+        "",
+        "## Recall at equal alert rate",
+        "",
+        (
+            "Share of fraud caught when each strategy flags the same share of all orders (its highest-scored ones). "
+            "Fraud is ~2% of orders, so 2% is the smallest budget that could catch all of it."
+        ),
+        "",
+        md_table(["Strategy"] + [f"Flag top {b}" for b in budgets], headline),
+        "",
+        "## Each strategy's own decisions",
+        "",
+        "Flagged = review or block. Legit friction = legitimate orders not allowed straight through (mostly 3-D Secure step-ups).",
+        "",
+        md_table(["Strategy", "Flagged recall", "Flagged precision", "Block recall", "Block precision", "Legit friction"], own),
+        "",
+        "## By fraud scenario",
+        "",
+        (
+            "Flagged recall, then pattern accuracy (share of flagged fraud given the right pattern; – where a "
+            "strategy does not predict patterns). Friendly fraud is designed to look legitimate at checkout."
+        ),
+        "",
+        md_table(["Scenario", "n"] + names + [f"Pattern: {n}" for n in names], sc_rows),
+    ]
+    if ops:
+        parts += ["", "## Jev operations", "",
+                  md_table(["Strategy", "Jev calls / 1k orders", "p50", "p95", "p99", "Input tokens / call",
+                            "Hard-rule skips (sample)", "Fallbacks"], ops)]
+    parts += [
+        "",
+        "## Caveats",
+        "",
+        (
+            "- The simulator, features and rules share an author, and XGBoost is trained on data from the same "
+            "generator. Results show relative behavior on synthetic data, not production performance."
+        ),
+        "- Jev's decision thresholds were set before measurement and not calibrated; XGBoost's cutoffs are calibrated by alert rate.",
+        "- Rates are weighted estimates from a stratified sample; legit-side rates carry sampling noise.",
+        "",
+        "## Reproduce",
+        "",
+        "```bash",
+        "uv run vigil-sim generate --format jsonl --seed 101 --out data/sim/holdout.jsonl",
+        "uv run vigil-sim generate --format jsonl --seed 7 --days 120 --out data/sim/train.jsonl && uv run vigil-train",
+        f"cd scoring-service && npm run bench -- ../data/sim/holdout.jsonl --legit-sample {meta['legit_sample']} --max-calls N",
+        "cd .. && uv run vigil-bench-report --markdown docs/benchmark-results.md",
+        "```",
+        "",
+    ]
+    return "\n".join(parts)
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(prog="vigil-bench-report")
     parser.add_argument("--in", dest="results_dir", type=Path, default=Path("reports/bench"))
+    parser.add_argument("--markdown", type=Path, help="also write a Markdown summary (e.g. docs/benchmark-results.md)")
     args = parser.parse_args(argv)
     rows, meta = load(args.results_dir)
+    meta["jev_models_seen"] = sorted({r.jev_model for r in rows if r.jev_model})
     metrics = compute(rows)
     samples = explanation_samples(rows)
     (args.results_dir / "summary.json").write_text(json.dumps({"meta": meta, "metrics": metrics}, indent=2) + "\n")
     (args.results_dir / "report.html").write_text(render(metrics, samples, meta))
+    if args.markdown:
+        args.markdown.write_text(render_markdown(metrics, meta))
+        print(f"wrote {args.markdown}")
     for s in [s for s in ORDER if s in metrics]:
         m = metrics[s]
         r = m["recall_at_alert_rate"]

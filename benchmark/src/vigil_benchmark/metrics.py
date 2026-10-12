@@ -33,6 +33,7 @@ class Row:
     tier: str
     jev_latency_ms: float | None
     jev_input_tokens: int | None
+    jev_model: str | None = None
 
     @property
     def flagged(self) -> bool:
