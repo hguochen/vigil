@@ -49,3 +49,31 @@ uv run pytest
 ```bash
 docker compose up --build
 ```
+
+## Simulated data
+
+```bash
+uv run vigil-sim generate                              # data/sim/transactions.parquet
+uv run vigil-sim generate --format jsonl --seed 101    # data/sim/transactions.jsonl
+```
+
+## Rules and policy
+
+- `scoring-service/config/rules.yaml`: hard rules (`action`) decide immediately, and soft rules (`weight`) combine into a 0–1 score. Rules are validated when the file loads.
+- `scoring-service/config/policy.yaml`: score thresholds for step_up_3ds, review and block, plus risk levels.
+- `SCORING_STRATEGY=rules|passthrough` picks the scorer (default `rules`).
+
+To evaluate a rules change offline against labeled data:
+
+```bash
+cd scoring-service
+npm run eval:offline -- ../data/sim/transactions.jsonl
+```
+
+## Features
+
+There are 38 behavioral features, defined once in [contracts/feature_spec.md](contracts/feature_spec.md) and implemented in TypeScript (serving) and Python (training). Parity is enforced by [contracts/golden/features.json](contracts/golden/features.json). After an intentional feature change, regenerate it:
+
+```bash
+uv run python -m vigil_ml.golden
+```
