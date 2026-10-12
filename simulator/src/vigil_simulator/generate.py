@@ -49,6 +49,10 @@ def generate(config: GenerateConfig) -> list[Record]:
     records = normal + inject_fraud(world, len(normal), config.fraud_rate)
     records.sort(key=lambda r: r.occurred_at)
     for i, r in enumerate(records, start=1):
+        # The API payload carries whole seconds; keep the record's time identical to it.
+        r.occurred_at = r.occurred_at.replace(microsecond=0)
+        if r.label.reported_at:
+            r.label.reported_at = r.label.reported_at.replace(microsecond=0)
         r.transaction["transaction_id"] = f"txn_{i:08d}"
     return records
 

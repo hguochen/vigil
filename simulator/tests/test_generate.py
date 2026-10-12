@@ -39,6 +39,8 @@ def test_all_scenarios_appear(records):
 def test_time_ordered_with_unique_ids(records):
     times = [r.occurred_at for r in records]
     assert times == sorted(times)
+    assert all(t.microsecond == 0 for t in times)
+    assert all(r.transaction["occurred_at"] == r.occurred_at.strftime("%Y-%m-%dT%H:%M:%SZ") for r in records)
     ids = [r.transaction["transaction_id"] for r in records]
     assert len(set(ids)) == len(ids)
     assert all(ids)
