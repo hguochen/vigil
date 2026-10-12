@@ -103,6 +103,26 @@ def write_parquet(records: list[Record], path: Path, config: GenerateConfig) -> 
     pq.write_table(table, path)
 
 
+def iso_or_none(dt: datetime | None) -> str | None:
+    return dt.strftime("%Y-%m-%dT%H:%M:%SZ") if dt else None
+
+
+def write_jsonl(records: list[Record], path: Path) -> None:
+    """One {"transaction", "label"} object per line, for tools outside Python."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w") as f:
+        for r in records:
+            label = {
+                "is_fraud": r.label.is_fraud,
+                "scenario": r.label.scenario,
+                "pattern": r.label.pattern,
+                "reported_at": iso_or_none(r.label.reported_at),
+                "report_source": r.label.report_source,
+            }
+            f.write(json.dumps({"transaction": r.transaction, "label": label}, separators=(",", ":")))
+            f.write("\n")
+
+
 def summarize(records: list[Record]) -> str:
     fraud = [r for r in records if r.label.is_fraud]
     by_scenario = Counter(r.label.scenario for r in fraud)

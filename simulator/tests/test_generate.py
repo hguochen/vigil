@@ -72,3 +72,13 @@ def test_cli_generate(tmp_path: Path, capsys):
     main(["generate", "--customers", "100", "--days", "5", "--seed", "1", "--out", str(out)])
     assert out.exists()
     assert "transactions:" in capsys.readouterr().out
+
+
+def test_cli_generate_jsonl(tmp_path: Path):
+    out = tmp_path / "cli.jsonl"
+    main(["generate", "--customers", "100", "--days", "5", "--seed", "1", "--format", "jsonl",
+          "--out", str(out)])
+    lines = [json.loads(line) for line in out.read_text().splitlines()]
+    assert lines and set(lines[0]) == {"transaction", "label"}
+    assert {"is_fraud", "scenario", "pattern", "reported_at", "report_source"} == set(lines[0]["label"])
+    assert any(line["label"]["is_fraud"] for line in lines)
