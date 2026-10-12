@@ -1,0 +1,13 @@
+# Decision policy: maps a 0-1 risk score to a decision and a risk level.
+# A decision applies when score >= its threshold.
+version: 1
+
+thresholds:
+  step_up_3ds: 0.35
+  review: 0.6
+  block: 0.85
+
+risk_levels:
+  elevated: 0.35
+  high: 0.6
+  critical: 0.85
