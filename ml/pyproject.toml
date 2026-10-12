@@ -7,7 +7,12 @@ authors = [
 ]
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "onnx>=1.23.2",
+    "onnxmltools>=1.16.0",
+    "onnxruntime>=1.31.0",
+    "scikit-learn>=1.9.1",
     "vigil-simulator",
+    "xgboost>=3.4.1",
 ]
 
 [build-system]
