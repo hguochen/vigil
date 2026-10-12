@@ -90,3 +90,12 @@ export interface ScoreResponse {
   latency_ms: number;
   scored_at: string;
 }
+
+export const LabelSchema = z.strictObject({
+  label: z.enum(["fraud", "legit"]),
+  source: z.enum(["chargeback", "manual_review", "customer_report"]).optional(),
+  fraud_pattern: z.enum(["card_testing", "account_takeover", "stolen_card", "friendly_fraud", "promo_abuse"]).optional(),
+  reported_at: z.iso.datetime({ offset: true }).optional(),
+});
+
+export type Label = z.infer<typeof LabelSchema>;

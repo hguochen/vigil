@@ -1,5 +1,5 @@
 import type { SqlClient } from "./client.js";
-import type { ScoreResponse, Transaction } from "../domain/transaction.js";
+import type { Label, ScoreResponse, Transaction } from "../domain/transaction.js";
 import type { Features } from "../features/types.js";
 
 export type InsertOutcome = "inserted" | "duplicate" | "conflict";
@@ -106,5 +106,29 @@ export class TransactionsRepo {
       [transactionId],
     );
     return rows[0] ? toResponse(rows[0]) : null;
+  }
+
+  async insertLabel(transactionId: string, label: Label): Promise<void> {
+    await this.db.query(
+      `INSERT INTO labels (transaction_id, label, source, fraud_pattern, reported_at)
+       VALUES ($1, $2, $3, $4, COALESCE($5::timestamptz, now()))`,
+      [transactionId, label.label, label.source ?? null, label.fraud_pattern ?? null, label.reported_at ?? null],
+    );
+  }
+
+  async latestLabel(transactionId: string): Promise<(Label & { reported_at: string }) | null> {
+    const { rows } = await this.db.query<{ label: Label["label"]; source: string | null; fraud_pattern: string | null; reported_at: Date | string }>(
+      `SELECT label, source, fraud_pattern, reported_at FROM labels
+        WHERE transaction_id = $1 ORDER BY reported_at DESC, id DESC LIMIT 1`,
+      [transactionId],
+    );
+    const r = rows[0];
+    if (!r) return null;
+    return {
+      label: r.label,
+      ...(r.source && { source: r.source as Label["source"] }),
+      ...(r.fraud_pattern && { fraud_pattern: r.fraud_pattern as Label["fraud_pattern"] }),
+      reported_at: new Date(r.reported_at).toISOString(),
+    };
   }
 }

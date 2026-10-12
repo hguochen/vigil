@@ -62,9 +62,14 @@ paths:
             application/json:
               schema:
                 type: object
-                required: [transaction, decision]
+                required: [transaction, decision, label]
                 properties:
                   transaction: { $ref: "#/components/schemas/Transaction" }
+                  label:
+                    description: Latest ground-truth label, or null if none has been reported
+                    oneOf:
+                      - $ref: "#/components/schemas/Label"
+                      - type: "null"
                   decision:
                     description: Latest decision; null if the transaction was stored but never scored
                     oneOf:
@@ -76,7 +81,9 @@ paths:
   /v1/transactions/{transactionId}/label:
     post:
       summary: Report ground truth for a transaction (chargeback, confirmed fraud, confirmed legit)
-      description: Planned for milestone 8.
+      description: |
+        Append-only; a later label supersedes an earlier one. `fraud_pattern` is only valid
+        with `label: fraud`. `reported_at` defaults to the time of the request.
       parameters:
         - $ref: "#/components/parameters/TransactionId"
       requestBody:
@@ -86,6 +93,7 @@ paths:
             schema: { $ref: "#/components/schemas/Label" }
       responses:
         "204": { description: Label recorded }
+        "400": { $ref: "#/components/responses/BadRequest" }
         "401": { $ref: "#/components/responses/Unauthorized" }
         "404": { $ref: "#/components/responses/NotFound" }
 

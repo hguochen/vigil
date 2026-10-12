@@ -1,6 +1,6 @@
 import { performance } from "node:perf_hooks";
 import type { FastifyInstance } from "fastify";
-import { TransactionSchema, type ScoreResponse, type Transaction } from "../domain/transaction.js";
+import { LabelSchema, TransactionSchema, type ScoreResponse, type Transaction } from "../domain/transaction.js";
 import type { TransactionsRepo } from "../db/transactions-repo.js";
 import type { FeatureExtractor } from "../features/extractor.js";
 import type { Scorer } from "../scoring/scorer.js";
@@ -67,6 +67,30 @@ export async function transactionRoutes(app: FastifyInstance, { repo, scorer, fe
     if (!transaction) {
       return reply.code(404).send({ error: "not_found", message: "Transaction not found" });
     }
-    return { transaction, decision: await repo.latestDecision(transactionId) };
+    return {
+      transaction,
+      decision: await repo.latestDecision(transactionId),
+      label: await repo.latestLabel(transactionId),
+    };
+  });
+
+  app.post<{ Params: { transactionId: string } }>("/v1/transactions/:transactionId/label", async (request, reply) => {
+    const parsed = LabelSchema.safeParse(request.body);
+    if (!parsed.success) {
+      return reply.code(400).send({
+        error: "invalid_request",
+        message: "Label failed validation",
+        issues: parsed.error.issues.map((i) => ({ path: i.path.join("."), message: i.message })),
+      });
+    }
+    if (parsed.data.label === "legit" && parsed.data.fraud_pattern) {
+      return reply.code(400).send({ error: "invalid_request", message: "fraud_pattern only applies to fraud labels" });
+    }
+    const { transactionId } = request.params;
+    if (!(await repo.find(transactionId))) {
+      return reply.code(404).send({ error: "not_found", message: "Transaction not found" });
+    }
+    await repo.insertLabel(transactionId, parsed.data);
+    return reply.code(204).send();
   });
 }

@@ -47,6 +47,23 @@ export const MIGRATIONS: Migration[] = [
     id: "002_decision_features",
     sql: `ALTER TABLE decisions ADD COLUMN features JSONB;`,
   },
+  {
+    id: "003_labels",
+    sql: `
+      -- Ground truth arriving after the decision (chargebacks, review outcomes).
+      -- Append-only: a later label supersedes an earlier one.
+      CREATE TABLE labels (
+        id             BIGSERIAL PRIMARY KEY,
+        transaction_id TEXT NOT NULL REFERENCES transactions (transaction_id) ON DELETE CASCADE,
+        label          TEXT NOT NULL CHECK (label IN ('fraud', 'legit')),
+        source         TEXT,
+        fraud_pattern  TEXT,
+        reported_at    TIMESTAMPTZ NOT NULL,
+        received_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+      );
+      CREATE INDEX labels_transaction_idx ON labels (transaction_id, reported_at DESC);
+    `,
+  },
 ];
 
 export async function migrate(db: SqlClient): Promise<string[]> {

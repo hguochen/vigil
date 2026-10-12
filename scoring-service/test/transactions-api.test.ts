@@ -155,4 +155,48 @@ describe("transactions API", () => {
     await score(makeTransaction()); // retry scores it now
     expect(scorer.score.mock.calls.at(-1)![1].customer_prior_txns).toBe(0);
   });
+
+  describe("POST /v1/transactions/:id/label", () => {
+    const label = (id: string, body: unknown) =>
+      app.inject({ method: "POST", url: `/v1/transactions/${id}/label`, headers, payload: body as object });
+
+    it("records a chargeback and returns it with the transaction", async () => {
+      await score(makeTransaction());
+      const res = await label("txn_001", {
+        label: "fraud",
+        source: "chargeback",
+        fraud_pattern: "stolen_card",
+        reported_at: "2026-11-02T09:00:00Z",
+      });
+      expect(res.statusCode).toBe(204);
+      const got = await app.inject({ method: "GET", url: "/v1/transactions/txn_001", headers });
+      expect(got.json().label).toEqual({
+        label: "fraud",
+        source: "chargeback",
+        fraud_pattern: "stolen_card",
+        reported_at: "2026-11-02T09:00:00.000Z",
+      });
+    });
+
+    it("lets a later label supersede an earlier one", async () => {
+      await score(makeTransaction());
+      await label("txn_001", { label: "fraud", source: "chargeback", reported_at: "2026-11-02T09:00:00Z" });
+      await label("txn_001", { label: "legit", source: "manual_review", reported_at: "2026-11-05T09:00:00Z" });
+      const got = await app.inject({ method: "GET", url: "/v1/transactions/txn_001", headers });
+      expect(got.json().label).toMatchObject({ label: "legit", source: "manual_review" });
+    });
+
+    it("rejects unknown transactions, bad bodies and inconsistent labels", async () => {
+      expect((await label("missing", { label: "fraud" })).statusCode).toBe(404);
+      await score(makeTransaction());
+      expect((await label("txn_001", { label: "maybe" })).statusCode).toBe(400);
+      expect((await label("txn_001", { label: "legit", fraud_pattern: "stolen_card" })).statusCode).toBe(400);
+      expect((await label("txn_001", { label: "fraud", extra: 1 })).statusCode).toBe(400);
+    });
+
+    it("requires the API key", async () => {
+      const res = await app.inject({ method: "POST", url: "/v1/transactions/txn_001/label", payload: { label: "fraud" } });
+      expect(res.statusCode).toBe(401);
+    });
+  });
 });
