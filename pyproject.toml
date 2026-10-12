@@ -16,7 +16,12 @@ vigil-benchmark = { workspace = true }
 members = ["simulator", "ml", "benchmark"]
 
 [dependency-groups]
-dev = ["pytest>=8", "ruff>=0.6"]
+dev = [
+    "jsonschema>=4.26.0",
+    "pytest>=8",
+    "pyyaml>=6.0.3",
+    "ruff>=0.6",
+]
 
 [tool.ruff]
 line-length = 100
