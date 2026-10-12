@@ -1,0 +1,26 @@
+[project]
+name = "vigil"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["vigil-simulator", "vigil-ml", "vigil-benchmark"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+vigil-simulator = { workspace = true }
+vigil-ml = { workspace = true }
+vigil-benchmark = { workspace = true }
+
+[tool.uv.workspace]
+members = ["simulator", "ml", "benchmark"]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["simulator/tests", "ml/tests", "benchmark/tests"]

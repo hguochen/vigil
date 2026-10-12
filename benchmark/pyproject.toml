@@ -1,0 +1,13 @@
+[project]
+name = "vigil-benchmark"
+version = "0.1.0"
+description = "Strategy benchmark: rules vs XGBoost vs Jev"
+authors = [
+    { name = "Gary Hou", email = "hguochen@gmail.com" }
+]
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
