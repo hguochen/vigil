@@ -83,9 +83,11 @@ rules:
     pattern: stolen_card
     when: { feature: card_distinct_accounts_24h, op: ">=", value: 2 }
 
+  # Weak alone (families share cards; victims keep using their card after a
+  # fraudster did), so it only escalates in combination with other signals.
   - code: CARD_SEEN_WITH_OTHER_CUSTOMER
     message: "Card previously used by {card_other_customers} other customer(s)"
-    weight: 0.4
+    weight: 0.25
     pattern: stolen_card
     when: { feature: card_other_customers, op: ">=", value: 1 }
 
@@ -126,7 +128,7 @@ rules:
 
   - code: NEW_DEVICE_NEW_SHIPPING_HIGH_VALUE
     message: "{amount_usd} USD shipped to a new address from a new device"
-    weight: 0.4
+    weight: 0.5
     pattern: account_takeover
     when:
       all:
