@@ -63,7 +63,7 @@ describe("DecisionPolicy", () => {
 thresholds: { step_up_3ds: 0.7, review: 0.6, block: 0.9 }
 risk_levels: { elevated: 0.3, high: 0.6, critical: 0.9 }
 jev: { thresholds: { step_up_3ds: 0.3, review: 0.6, block: 0.9 }, min_action_confidence: 0.6, on_error: rules }
-xgboost: { thresholds: { step_up_3ds: 0.3, review: 0.6, block: 0.9 } }`),
+xgboost: { alert_rates: { step_up_3ds: 0.03, review: 0.02, block: 0.01 } }`),
     ).toThrow(/ascending/);
   });
 

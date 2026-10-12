@@ -42,5 +42,15 @@
   ],
   "input_name": "input",
   "probability_output": "probabilities",
-  "positive_class_index": 1
+  "positive_class_index": 1,
+  "alert_rates": {
+    "step_up_3ds": 0.03,
+    "review": 0.02,
+    "block": 0.01
+  },
+  "decision_thresholds": {
+    "step_up_3ds": 0.35,
+    "review": 0.6,
+    "block": 0.9
+  }
 }

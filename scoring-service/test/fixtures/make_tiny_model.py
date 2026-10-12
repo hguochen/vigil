@@ -12,6 +12,7 @@ from pathlib import Path
 import onnx
 from onnx import TensorProto, helper
 from vigil_ml.features import FEATURE_NAMES
+from vigil_ml.train import DEFAULT_POLICY, load_alert_rates
 
 OUT = Path(__file__).parent / "xgb-tiny"
 
@@ -61,6 +62,8 @@ onnx.save(model, OUT / "model.onnx")
             "input_name": "input",
             "probability_output": "probabilities",
             "positive_class_index": 1,
+            "alert_rates": load_alert_rates(DEFAULT_POLICY),
+            "decision_thresholds": {"step_up_3ds": 0.35, "review": 0.6, "block": 0.9},
         },
         indent=2,
     )

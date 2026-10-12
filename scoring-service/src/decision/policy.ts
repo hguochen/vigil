@@ -33,10 +33,14 @@ const PolicySchema = z.strictObject({
     on_error: z.enum(["rules", "review"]),
   }),
   xgboost: z.strictObject({
-    /** Model probability at or above which each decision applies. */
-    thresholds: z
+    /**
+     * Alert-rate budgets: the share of all transactions at or above each action
+     * (cumulative, so step_up_3ds >= review >= block). A trained model ships the
+     * probability cutoffs that produce these rates on its calibration window.
+     */
+    alert_rates: z
       .strictObject({ step_up_3ds: unit, review: unit, block: unit })
-      .refine((t) => ascending(t, ["step_up_3ds", "review", "block"]), "xgboost thresholds must be ascending"),
+      .refine((b) => b.step_up_3ds > b.review && b.review > b.block, "alert rates must shrink: step_up_3ds > review > block"),
   }),
 });
 
@@ -108,9 +112,11 @@ export class DecisionPolicy {
     };
   }
 
-  /** Maps a bare model probability (xgboost strategy) to a decision; risk level follows the decision. */
-  decideModel(p: number, modelVersion: string): PolicyOutcome {
-    const t = this.config.xgboost.thresholds;
+  /**
+   * Maps a bare model probability (xgboost strategy) to a decision using the
+   * cutoffs the model shipped for this policy's alert rates; risk level follows the decision.
+   */
+  decideModel(p: number, modelVersion: string, t: { step_up_3ds: number; review: number; block: number }): PolicyOutcome {
     const decision: Decision = p >= t.block ? "block" : p >= t.review ? "review" : p >= t.step_up_3ds ? "step_up_3ds" : "allow";
     const riskLevel: Record<Decision, RiskLevel> = { allow: "low", step_up_3ds: "elevated", review: "high", block: "critical" };
     return {
@@ -118,7 +124,7 @@ export class DecisionPolicy {
       score: p,
       riskLevel: riskLevel[decision],
       pattern: "none",
-      reasons: [{ code: "XGB_SCORE", message: `Model ${modelVersion}: ${pct(p)} fraud probability` }],
+      reasons: [{ code: "XGB_SCORE", message: `Model ${modelVersion}: fraud probability ${p.toFixed(4)}` }],
     };
   }
 

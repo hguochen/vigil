@@ -17,6 +17,9 @@ const SchemaFile = z.object({
   input_name: z.string(),
   probability_output: z.string(),
   positive_class_index: z.number().int().min(0),
+  /** Alert rates the cutoffs were derived for; must match policy.yaml. */
+  alert_rates: z.object({ step_up_3ds: z.number(), review: z.number(), block: z.number() }),
+  decision_thresholds: z.object({ step_up_3ds: z.number(), review: z.number(), block: z.number() }),
 });
 
 /** Builds the model input row; null features become NaN (XGBoost's "missing"). */
@@ -46,6 +49,14 @@ export class XgbScorer implements Scorer {
           `unexpected: ${extra.join(",") || "none"}; or different order). Retrain with the current feature spec.`,
       );
     }
+    const rates = policy.config.xgboost.alert_rates;
+    const same = (["step_up_3ds", "review", "block"] as const).every((k) => schema.alert_rates[k] === rates[k]);
+    if (!same) {
+      throw new Error(
+        `model ${schema.model_version} was calibrated for alert rates ${JSON.stringify(schema.alert_rates)}, ` +
+          `but policy.yaml has ${JSON.stringify(rates)}. Retrain (uv run vigil-train) after changing them.`,
+      );
+    }
     const session = await ort.InferenceSession.create(join(dir, "model.onnx"));
     return new XgbScorer(session, schema, policy);
   }
@@ -64,7 +75,7 @@ export class XgbScorer implements Scorer {
 
   async score(_txn: Transaction, features: Features): Promise<ScoreResult> {
     const p = await this.predict(features);
-    const outcome = this.policy.decideModel(p, this.schema.model_version);
+    const outcome = this.policy.decideModel(p, this.schema.model_version, this.schema.decision_thresholds);
     return {
       decision: outcome.decision,
       fraud_probability: p,

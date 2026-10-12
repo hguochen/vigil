@@ -37,7 +37,7 @@ describe("XgbScorer", () => {
     const high = await scorer.score(txn, base); // amount >= 100 -> 0.95
     expect(high.fraud_probability).toBeCloseTo(0.95, 5);
     expect(high).toMatchObject({ decision: "block", risk_level: "critical", pattern: null });
-    expect(high.reasons).toEqual([{ code: "XGB_SCORE", message: "Model tiny-fixture: 95% fraud probability" }]);
+    expect(high.reasons).toEqual([{ code: "XGB_SCORE", message: "Model tiny-fixture: fraud probability 0.9500" }]);
 
     const low = await scorer.score(txn, withF({ amount_usd: 20 }));
     expect(low.fraud_probability).toBeCloseTo(0.1, 5);

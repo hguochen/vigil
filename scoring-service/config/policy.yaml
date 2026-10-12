@@ -24,10 +24,14 @@ jev:
   # "review" also sends the order to review at minimum.
   on_error: rules
 
-# XGBoost baseline (xgboost strategy). Thresholds apply to the model probability.
-# Starting values; recalibrate from the training report once a model is trained.
+# XGBoost baseline (xgboost strategy). Model probabilities are not calibrated to
+# business rules, so the policy sets alert-rate budgets: the share of ALL orders
+# at or above each action (cumulative), i.e. step-up / review / block capacity.
+# `vigil-train` ships the probability cutoffs that produce these rates on its
+# calibration window. Labels are not needed for this, so unreported fraud cannot
+# distort it. Change these, then retrain.
 xgboost:
-  thresholds:
-    step_up_3ds: 0.35
-    review: 0.6
-    block: 0.9
+  alert_rates:
+    step_up_3ds: 0.03
+    review: 0.02
+    block: 0.01
