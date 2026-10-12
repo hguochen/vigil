@@ -2,7 +2,7 @@ import json
 
 import pytest
 from vigil_benchmark.metrics import Row, compute, explanation_samples, recall_at_alert_rate
-from vigil_benchmark.report import main
+from vigil_benchmark.report import README_END, README_START, main, update_readme
 
 
 def row(tid, strategy, fraud, score, decision="allow", weight=1.0, scenario=None, pattern=None, true_pattern=None,
@@ -79,3 +79,17 @@ def test_report_cli_writes_html_and_summary(tmp_path, capsys):
     assert "<title>Vigil Benchmark</title>" in page and "Jev operations" in page
     assert json.loads((tmp_path / "summary.json").read_text())["metrics"]["jev"]["flagged_recall"] == 1.0
     assert "Rules" in capsys.readouterr().out
+
+
+def test_update_readme_appends_once_then_replaces_in_place(tmp_path):
+    readme = tmp_path / "README.md"
+    readme.write_text("# Project\n\nIntro.\n")
+    update_readme(readme, "# Benchmark results\n\n## Table\n\nv1\n")
+    first = readme.read_text()
+    assert first.startswith("# Project") and first.rstrip().endswith(README_END)
+    assert "## Benchmark results" in first and "### Table" in first  # nested under the README
+    readme.write_text(first + "\n## Later section\n")
+    update_readme(readme, "# Benchmark results\n\n## Table\n\nv2\n")
+    second = readme.read_text()
+    assert second.count(README_START) == 1 and "v2" in second and "v1" not in second
+    assert second.rstrip().endswith("## Later section")  # content after the block is kept

@@ -60,5 +60,5 @@ Flagged recall, then pattern accuracy (share of flagged fraud given the right pa
 uv run vigil-sim generate --format jsonl --seed 101 --out data/sim/holdout.jsonl
 uv run vigil-sim generate --format jsonl --seed 7 --days 120 --out data/sim/train.jsonl && uv run vigil-train
 cd scoring-service && npm run bench -- ../data/sim/holdout.jsonl --legit-sample 2000 --max-calls N
-cd .. && uv run vigil-bench-report --markdown docs/benchmark-results.md
+cd .. && uv run vigil-bench-report --markdown docs/benchmark-results.md --readme README.md
 ```
