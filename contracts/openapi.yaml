@@ -44,6 +44,11 @@ paths:
               schema: { $ref: "#/components/schemas/ScoreResponse" }
         "400": { $ref: "#/components/responses/BadRequest" }
         "401": { $ref: "#/components/responses/Unauthorized" }
+        "409":
+          description: transaction_id was already submitted with a different payload
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
 
   /v1/transactions/{transactionId}:
     get:
@@ -60,7 +65,11 @@ paths:
                 required: [transaction, decision]
                 properties:
                   transaction: { $ref: "#/components/schemas/Transaction" }
-                  decision: { $ref: "#/components/schemas/ScoreResponse" }
+                  decision:
+                    description: Latest decision; null if the transaction was stored but never scored
+                    oneOf:
+                      - $ref: "#/components/schemas/ScoreResponse"
+                      - type: "null"
         "401": { $ref: "#/components/responses/Unauthorized" }
         "404": { $ref: "#/components/responses/NotFound" }
 
