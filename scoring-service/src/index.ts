@@ -14,7 +14,7 @@ const geo = loadGeoTable(config.GEO_CITIES_PATH);
 
 // Build the scorer first so misconfiguration (e.g. a missing Jev key) fails fast.
 let app: FastifyInstance | undefined;
-const scorer = createScorer(config, {
+const scorer = await createScorer(config, {
   geo,
   onJevError: (err, txn) =>
     app?.log.warn({ err, transaction_id: txn.transaction_id }, "Jev unavailable; fell back to rules"),

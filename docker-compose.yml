@@ -37,6 +37,10 @@ services:
       REDIS_URL: redis://redis:6379
       PORT: "8080"
       FEATURE_STORE: redis
+      XGB_MODEL_DIR: /models/xgb
+    volumes:
+      # Trained baseline model (uv run vigil-train), used by SCORING_STRATEGY=xgboost
+      - ./models:/models:ro
     ports:
       - "8080:8080"
     depends_on:

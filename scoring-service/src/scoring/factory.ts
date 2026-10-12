@@ -7,6 +7,7 @@ import { RulesEngine } from "../rules/engine.js";
 import { JevScorer } from "./jev-scorer.js";
 import { RulesScorer } from "./rules-scorer.js";
 import { passthroughScorer, type Scorer } from "./scorer.js";
+import { XgbScorer } from "./xgb-scorer.js";
 
 export interface ScorerOptions {
   geo: GeoTable;
@@ -15,12 +16,13 @@ export interface ScorerOptions {
   fetch?: typeof fetch;
 }
 
-export function createScorer(config: Config, options: ScorerOptions): Scorer {
+export async function createScorer(config: Config, options: ScorerOptions): Promise<Scorer> {
   if (config.SCORING_STRATEGY === "passthrough") return passthroughScorer;
 
   const engine = RulesEngine.load(config.RULES_PATH);
   const policy = DecisionPolicy.load(config.POLICY_PATH);
   if (config.SCORING_STRATEGY === "rules") return new RulesScorer(engine, policy);
+  if (config.SCORING_STRATEGY === "xgboost") return XgbScorer.load(policy, config.XGB_MODEL_DIR);
 
   if (!config.TYPESAFE_API_KEY) {
     throw new Error(`SCORING_STRATEGY=${config.SCORING_STRATEGY} requires TYPESAFE_API_KEY`);

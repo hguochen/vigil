@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { loadConfig } from "../src/config.js";
 import { loadGeoTable } from "../src/features/geo.js";
@@ -10,17 +11,29 @@ import type { HistorySnapshot } from "../src/features/types.js";
 const geo = loadGeoTable();
 
 describe("createScorer", () => {
-  it.each(["passthrough", "rules"] as const)("builds %s without a Jev key", (s) => {
-    expect(createScorer(loadConfig({ SCORING_STRATEGY: s }), { geo }).strategy).toBe(s);
+  it.each(["passthrough", "rules"] as const)("builds %s without a Jev key", async (s) => {
+    expect((await createScorer(loadConfig({ SCORING_STRATEGY: s }), { geo })).strategy).toBe(s);
   });
 
-  it.each(["jev", "jev_rules"] as const)("refuses %s without a Jev key", (s) => {
-    expect(() => createScorer(loadConfig({ SCORING_STRATEGY: s }), { geo })).toThrow(/TYPESAFE_API_KEY/);
+  it.each(["jev", "jev_rules"] as const)("refuses %s without a Jev key", async (s) => {
+    await expect(createScorer(loadConfig({ SCORING_STRATEGY: s }), { geo })).rejects.toThrow(/TYPESAFE_API_KEY/);
+  });
+
+  it("builds xgboost from a model directory", async () => {
+    const dir = fileURLToPath(new URL("./fixtures/xgb-tiny", import.meta.url));
+    const scorer = await createScorer(loadConfig({ SCORING_STRATEGY: "xgboost", XGB_MODEL_DIR: dir }), { geo });
+    expect(scorer.strategy).toBe("xgboost");
+  });
+
+  it("explains a missing model directory", async () => {
+    await expect(
+      createScorer(loadConfig({ SCORING_STRATEGY: "xgboost", XGB_MODEL_DIR: "/nonexistent/xgb" }), { geo }),
+    ).rejects.toThrow(/feature_schema\.json/);
   });
 
   it("wires a working jev_rules scorer end to end through the SDK", async () => {
     const stub = stubFetch(ok({ isFraud: 0.12, pattern: "none", risk: "low", action: "allow" }));
-    const scorer = createScorer(
+    const scorer = await createScorer(
       loadConfig({ SCORING_STRATEGY: "jev_rules", TYPESAFE_API_KEY: "k", TYPESAFE_BASE_URL: "https://jev.test", JEV_MODEL: "jev-x" }),
       { geo, fetch: stub.fetch },
     );
