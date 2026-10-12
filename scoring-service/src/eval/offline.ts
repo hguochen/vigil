@@ -68,7 +68,7 @@ export function report(rows: EvalRow[]): string {
     const rs = fraud.filter((r) => r.scenario === s);
     const caught = rs.filter((r) => flagged(r.decision));
     lines.push(
-      `  ${s.padEnd(18)} ${String(rs.length).padStart(5)}   ${pct(caught.length, rs.length)}  ${pct(count(rs, "block"), rs.length)}  ${pct(count(rs, "step_up_3ds"), rs.length)}   ${pct(caught.filter((r) => r.pattern === r.truePattern).length, caught.length)}`,
+      `  ${s.padEnd(18)} ${String(rs.length).padStart(5)}   ${pct(caught.length, rs.length)}  ${pct(count(rs, "block"), rs.length)}  ${pct(count(rs, "step_up_3ds"), rs.length)}   ${pct(caught.filter((r) => r.pattern === r.truePattern).length, caught.filter((r) => r.pattern !== null).length)}`,
     );
   }
 

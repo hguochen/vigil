@@ -39,4 +39,9 @@ describe("offline evaluation", () => {
     expect(text).toContain("friendly_fraud");
     expect(text).toMatch(/flagged \(review\+block\): recall\s+50\.0%/);
   });
+
+  it("shows no pattern accuracy for strategies that do not predict patterns", () => {
+    const text = report([row(false, 0), row(true, 0.7, { pattern: null })]);
+    expect(text).toMatch(/stolen_card\s+1\s+100\.0%.*\s-\s*$/m);
+  });
 });
