@@ -13,6 +13,8 @@ ENV NODE_ENV=production
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 COPY scoring-service/package.json ./
+# Resolved at runtime as dist/<module>/../../config -> /app/config
+COPY scoring-service/config ./config
 # Resolved at runtime as dist/features/../../../contracts -> /contracts
 COPY contracts/geo_cities.csv /contracts/geo_cities.csv
 USER node

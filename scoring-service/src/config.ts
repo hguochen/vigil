@@ -9,6 +9,9 @@ const ConfigSchema = z.object({
   /** "memory" keeps history in-process (single instance, lost on restart); for local dev without Redis. */
   FEATURE_STORE: z.enum(["redis", "memory"]).default("redis"),
   GEO_CITIES_PATH: z.string().optional(),
+  SCORING_STRATEGY: z.enum(["passthrough", "rules"]).default("rules"),
+  RULES_PATH: z.string().optional(),
+  POLICY_PATH: z.string().optional(),
   TYPESAFE_API_KEY: z.string().optional(),
   LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]).default("info"),
 });

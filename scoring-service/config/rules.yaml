@@ -1,0 +1,185 @@
+# Vigil rules (Tier 0 + soft signals). Spec for features: contracts/feature_spec.md
+#
+# - Hard rules (`action`) decide immediately and, in the jev_rules strategy,
+#   skip the Jev call. Keep them to near-certain cases.
+# - Soft rules (`weight`, 0-1) combine by noisy-OR into a score that
+#   config/policy.yaml maps to allow / step_up_3ds / review / block.
+# - `pattern` names the fraud pattern a rule is evidence for.
+# - Messages may reference features or fields as {name}.
+version: 1
+
+lists:
+  blocked_cards: []
+  blocked_devices: []
+  blocked_ips: []
+  blocked_bins: []
+  blocked_email_domains: []
+
+rules:
+  # ---- Hard: blocklists -------------------------------------------------
+  - code: BLOCKLIST_CARD
+    message: Card is on the blocklist
+    action: block
+    pattern: stolen_card
+    when: { field: card.token, op: in_list, list: blocked_cards }
+
+  - code: BLOCKLIST_DEVICE
+    message: Device {device.id} is on the blocklist
+    action: block
+    when: { field: device.id, op: in_list, list: blocked_devices }
+
+  - code: BLOCKLIST_IP
+    message: IP {device.ip} is on the blocklist
+    action: block
+    when: { field: device.ip, op: in_list, list: blocked_ips }
+
+  - code: BLOCKLIST_BIN
+    message: Card BIN {card.bin} is on the blocklist
+    action: block
+    pattern: card_testing
+    when: { field: card.bin, op: in_list, list: blocked_bins }
+
+  - code: BLOCKLIST_EMAIL_DOMAIN
+    message: Email domain {email_domain} is on the blocklist
+    action: block
+    when: { field: email_domain, op: in_list, list: blocked_email_domains }
+
+  # ---- Hard: unmistakable attacks --------------------------------------
+  - code: CARD_TESTING_BURST
+    message: "{device_distinct_cards_24h} different cards tried from this device in 24h on a {amount_usd} USD order"
+    action: block
+    pattern: card_testing
+    when:
+      all:
+        - { feature: device_distinct_cards_24h, op: ">=", value: 5 }
+        - { feature: amount_usd, op: "<", value: 10 }
+
+  # ---- Soft: card testing ----------------------------------------------
+  - code: SMALL_CHARGE_VELOCITY
+    message: "{device_txn_count_1h} prior charges from this device in 1h; this one is {amount_usd} USD"
+    weight: 0.6
+    pattern: card_testing
+    when:
+      all:
+        - { feature: device_txn_count_1h, op: ">=", value: 3 }
+        - { feature: amount_usd, op: "<", value: 5 }
+
+  - code: DEVICE_MANY_CARDS
+    message: "{device_distinct_cards_24h} different cards used on this device in 24h"
+    weight: 0.4
+    pattern: card_testing
+    when: { feature: device_distinct_cards_24h, op: ">=", value: 3 }
+
+  # ---- Soft: stolen cards ----------------------------------------------
+  - code: CARD_VELOCITY_1H
+    message: "{card_txn_count_1h} prior charges on this card in the last hour"
+    weight: 0.5
+    pattern: stolen_card
+    when: { feature: card_txn_count_1h, op: ">=", value: 3 }
+
+  - code: CARD_MANY_ACCOUNTS
+    message: "Card used by {card_distinct_accounts_24h} other accounts in 24h"
+    weight: 0.6
+    pattern: stolen_card
+    when: { feature: card_distinct_accounts_24h, op: ">=", value: 2 }
+
+  - code: CARD_SEEN_WITH_OTHER_CUSTOMER
+    message: "Card previously used by {card_other_customers} other customer(s)"
+    weight: 0.4
+    pattern: stolen_card
+    when: { feature: card_other_customers, op: ">=", value: 1 }
+
+  - code: NEW_ACCOUNT_HIGH_VALUE
+    message: "{amount_usd} USD order from an account {account_age_days} days old"
+    weight: 0.45
+    pattern: stolen_card
+    when:
+      all:
+        - { feature: account_age_days, op: "<", value: 3 }
+        - { feature: amount_usd, op: ">=", value: 300 }
+
+  - code: GIFT_CARDS_NEW_ACCOUNT
+    message: Gift cards bought by an account {account_age_days} days old
+    weight: 0.35
+    pattern: stolen_card
+    when:
+      all:
+        - { feature: has_gift_cards, op: "==", value: 1 }
+        - { feature: account_age_days, op: "<", value: 7 }
+
+  # ---- Soft: account takeover ------------------------------------------
+  - code: IMPOSSIBLE_TRAVEL
+    message: "Implied travel speed {travel_speed_kmh} km/h since this customer's last order"
+    weight: 0.7
+    pattern: account_takeover
+    when: { feature: travel_speed_kmh, op: ">", value: 900 }
+
+  - code: NEW_DEVICE_FOREIGN_IP
+    message: Returning customer on a new device from an IP outside the billing country
+    weight: 0.6
+    pattern: account_takeover
+    when:
+      all:
+        - { feature: customer_prior_txns, op: ">=", value: 1 }
+        - { feature: is_new_device_for_customer, op: "==", value: 1 }
+        - { feature: ip_country_matches_billing, op: "==", value: 0 }
+
+  - code: NEW_DEVICE_NEW_SHIPPING_HIGH_VALUE
+    message: "{amount_usd} USD shipped to a new address from a new device"
+    weight: 0.4
+    pattern: account_takeover
+    when:
+      all:
+        - { feature: customer_prior_txns, op: ">=", value: 1 }
+        - { feature: is_new_device_for_customer, op: "==", value: 1 }
+        - { feature: shipping_matches_billing, op: "==", value: 0 }
+        - { feature: amount_usd, op: ">=", value: 300 }
+
+  - code: AMOUNT_SPIKE
+    message: "Order is {amount_vs_customer_avg}x this customer's average"
+    weight: 0.3
+    pattern: account_takeover
+    when: { feature: amount_vs_customer_avg, op: ">=", value: 5 }
+
+  # ---- Soft: promo abuse -----------------------------------------------
+  - code: DEVICE_MANY_ACCOUNTS
+    message: "{device_distinct_accounts_24h} accounts used this device in 24h"
+    weight: 0.5
+    pattern: promo_abuse
+    when: { feature: device_distinct_accounts_24h, op: ">=", value: 3 }
+
+  - code: SHIPPING_MANY_ACCOUNTS
+    message: "{shipping_distinct_accounts_7d} accounts shipped to this address in 7 days"
+    weight: 0.5
+    pattern: promo_abuse
+    when: { feature: shipping_distinct_accounts_7d, op: ">=", value: 3 }
+
+  - code: PROMO_ON_NEW_ACCOUNT
+    message: Promo code {promo_code} used by an account {account_age_days} days old
+    weight: 0.2
+    pattern: promo_abuse
+    when:
+      all:
+        - { feature: promo_code_used, op: "==", value: 1 }
+        - { feature: account_age_days, op: "<", value: 2 }
+
+  # ---- Soft: identity and device hygiene --------------------------------
+  - code: HEADLESS_BROWSER
+    message: Automated or headless browser detected
+    weight: 0.5
+    when: { feature: ua_headless, op: "==", value: 1 }
+
+  - code: DISPOSABLE_EMAIL
+    message: Disposable email domain {email_domain}
+    weight: 0.3
+    when: { feature: email_disposable, op: "==", value: 1 }
+
+  - code: IP_CARD_COUNTRY_MISMATCH
+    message: IP country differs from card country {card.country}
+    weight: 0.25
+    when: { feature: ip_country_matches_card, op: "==", value: 0 }
+
+  - code: EMAIL_NAME_MISMATCH
+    message: Customer name does not appear in the email address
+    weight: 0.1
+    when: { feature: email_name_match, op: "==", value: 0 }
