@@ -284,6 +284,12 @@ source = { editable = "benchmark" }
 name = "vigil-ml"
 version = "0.1.0"
 source = { editable = "ml" }
+dependencies = [
+    { name = "vigil-simulator" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "vigil-simulator", editable = "simulator" }]
 
 [[package]]
 name = "vigil-simulator"
