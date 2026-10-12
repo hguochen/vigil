@@ -70,6 +70,26 @@ cd scoring-service
 npm run eval:offline -- ../data/sim/transactions.jsonl
 ```
 
+## XGBoost baseline
+
+```bash
+uv run vigil-sim generate --format jsonl --seed 7 --days 120 --out data/sim/train.jsonl
+uv run vigil-train          # writes models/xgb/{model.onnx,feature_schema.json,parity.json}
+SCORING_STRATEGY=xgboost npm --prefix scoring-service run dev
+```
+
+- **Point-in-time labels.** Training uses only fraud that had been *reported* at the training cutoff (`--labels truth` turns this off), and evaluation uses ground truth.
+- **Maturity gap.** The 21 days before the cutoff are left out of fitting, because most of their fraud hasn't been reported yet.
+- **Alert-rate cutoffs.** Cutoffs come from alert-rate budgets in `policy.yaml` (`xgboost.alert_rates`), applied to calibration-window scores, so they need no labels. The service refuses a model calibrated for different rates, or one trained on a different feature list.
+- **Checked export.** The export fails if ONNX and XGBoost disagree by more than 1e-5, and a Node test checks the ONNX runtime against Python's probabilities.
+
+Compare strategies offline on a held-out dataset:
+
+```bash
+cd scoring-service
+npm run eval:offline -- ../data/sim/holdout.jsonl --strategy xgboost
+```
+
 ## Jev strategies
 
 With `SCORING_STRATEGY=jev` or `jev_rules` (both need `TYPESAFE_API_KEY`), each transaction gets one Jev request that answers four typed questions (see `scoring-service/src/jev/questions.ts`):
